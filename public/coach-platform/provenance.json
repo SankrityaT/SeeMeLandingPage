@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-09-25T18:51:30.305Z",
+  "source": "http://127.0.0.1:5174",
+  "repository": "seeme-coaching-prototype",
+  "revision": "ea5f4704a8c5cd2ca127115c48012fb34ac6e263",
+  "working_tree": "Live local prototype; may include uncommitted updates. No prototype source changes made.",
+  "scope": "Actual browser captures of local prototype using fictional demo data; not released-product evidence. No image retouching.",
+  "images": [
+    {
+      "file": "clients-and-sessions.png",
+      "view": "Clients & sessions / all clients / week",
+      "sha256": "ec82520a28afaca706edf7950e2cd0f0d53f87b189274a94412abb310c6ecdd7"
+    },
+    {
+      "file": "session-builder.png",
+      "view": "Session studio / Edit Letting go. Leading better. / Intention",
+      "sha256": "b81864a8c24e937af68e04f78175dd59ba2ee2fcfdcad25aa479844bbf800dea"
+    }
+  ]
+}
