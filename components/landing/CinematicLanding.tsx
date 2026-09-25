@@ -561,7 +561,7 @@ const Act2Content = ({ id }: { id: string }) => {
             <a href="mailto:info@seemeapp.ai"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-base text-white/60 border border-white/15 hover:border-white/30 transition-colors"
             >
-              Partner with us
+              I am a coach
             </a>
           </div>
           <div className="mt-16 flex items-center justify-center gap-4 text-xs text-white/20">

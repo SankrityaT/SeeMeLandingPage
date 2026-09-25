@@ -222,7 +222,7 @@ export const NewLandingPage = () => {
         </Link>
         <div className="new-landing-topbar-actions">
           <SeemeButton href="/partner" variant="unfilled" size="sm" className="new-landing-topbar-cta">
-            Partner with us
+            I am a coach
           </SeemeButton>
         </div>
       </div>
@@ -769,7 +769,7 @@ export const NewLandingPage = () => {
             whileTap={{ scale: 0.97 }}
           >
             <SeemeButton href="/partner" variant="filled" size="lg">
-              Partner with us
+              I am a coach
             </SeemeButton>
           </motion.div>
         </FadeInWhenVisible>

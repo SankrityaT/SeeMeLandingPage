@@ -505,6 +505,8 @@ body > div {
 
 /* Scroll indicator */
 .new-landing-scroll-indicator {
+  position: relative;
+  top: -12px;
   display: flex;
   align-items: center;
   justify-content: center;
