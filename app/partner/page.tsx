@@ -111,49 +111,63 @@ export default function PartnerPage() {
         </div>
       </div>
 
-      <section className="hero partner-simple-hero">
+      <section className="partner-simple-hero" aria-labelledby="coach-hero-heading">
         <motion.div className="partner-hero-content" variants={heroContentVariants} initial="hidden" animate="visible">
-          <motion.div className="eyebrow" variants={heroItemVariants}>Your coaching, between sessions</motion.div>
-          <motion.h1 variants={heroItemVariants}>Multiply your impact.<br /><em>Without multiplying your hours.</em></motion.h1>
-          <motion.p variants={heroItemVariants}>Your clients, your sessions, your approach. Give the work a place to continue between meetings.</motion.p>
-          <motion.div className="cta-row" variants={heroItemVariants}><SeemeButton href="#apply" variant="filled" size="lg">Apply to pilot</SeemeButton></motion.div>
+          <div className="partner-hero-copy">
+            <motion.div className="eyebrow" variants={heroItemVariants}>For coaches</motion.div>
+            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Help clients put<br /><em>coaching into practice.</em></motion.h1>
+            <motion.p variants={heroItemVariants}>See your clients, upcoming sessions, and exercises in one clear view. Build guided sessions around your method, then assign work between meetings.</motion.p>
+            <motion.div className="cta-row partner-hero-actions" variants={heroItemVariants}>
+              <SeemeButton href="#apply" variant="filled" size="lg">Apply to pilot</SeemeButton>
+              <Link href="#how-it-works" className="partner-explore-link">Explore the workspace <span aria-hidden="true">↓</span></Link>
+            </motion.div>
+          </div>
+          <motion.figure className="partner-platform-image partner-hero-image" variants={heroItemVariants}>
+            <a href="/coach-platform/clients-and-sessions.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size client overview screenshot">
+              <Image src="/coach-platform/clients-and-sessions.png" alt="SeeMe coaching prototype showing the coach's client roster, weekly calendar of sessions and exercises, and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 58vw" priority />
+            </a>
+            <figcaption>Clients &amp; sessions · local prototype with fictional data</figcaption>
+          </motion.figure>
         </motion.div>
       </section>
 
-      <motion.section className="section alt partner-product-section" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="client-overview-heading">
-        <div className="inner">
-          <div className="sh partner-product-heading">
-            <div className="eyebrow">Clients &amp; sessions</div>
-            <h2 id="client-overview-heading">Your whole practice.<br /><em>One clear view.</em></h2>
-            <p>See your clients and upcoming meetings. Assign homework and guided sessions so everyone knows what comes next.</p>
-          </div>
+      <motion.section id="how-it-works" className="section partner-product-section" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="session-builder-heading">
+        <div className="inner partner-feature-row">
           <figure className="partner-platform-image">
-            <a href="/coach-platform/clients-and-sessions.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size client overview screenshot">
-              <Image src="/coach-platform/clients-and-sessions.png" alt="SeeMe coaching prototype showing a client roster, weekly session calendar and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 1100px" />
+            <a href="/coach-platform/session-builder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session builder screenshot">
+              <Image src="/coach-platform/session-builder.png" alt="SeeMe session studio with an editable coaching intention, session length, cover options and a client-facing preview" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 54vw" />
             </a>
-            <figcaption>Local coach prototype · Fictional clients · Open image to explore</figcaption>
+            <figcaption>Session studio · local prototype · sample session</figcaption>
           </figure>
-          <p className="partner-product-takeaway">Better-prepared meetings. Support in between.<br />More flexibility in how you make time for your clients.</p>
+          <div className="partner-feature-copy">
+            <div className="eyebrow">01 · Build</div>
+            <h2 id="session-builder-heading">Make your method a guided session.</h2>
+            <p>Start with a client goal. Shape the exercise, try the client experience, and save it to use when it fits.</p>
+          </div>
         </div>
       </motion.section>
 
-      <motion.section className="section partner-product-section" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="session-builder-heading">
-        <div className="inner">
-          <div className="sh partner-product-heading">
-            <div className="eyebrow">Session builder</div>
-            <h2 id="session-builder-heading">Your expertise.<br /><em>Ready between sessions.</em></h2>
-            <p>Turn your approach into guided exercises. Shape the questions, try the experience, and assign it when a client needs it.</p>
-          </div>
+      <motion.section className="section partner-product-section partner-product-section--alt" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="assignment-heading">
+        <div className="inner partner-feature-row partner-feature-row--reverse">
           <figure className="partner-platform-image">
-            <a href="/coach-platform/session-builder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session builder screenshot">
-              <Image src="/coach-platform/session-builder.png" alt="SeeMe session builder with an editable coaching intention, duration, cover and client-facing session preview" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 1100px" />
+            <a href="/coach-platform/assignment.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size guided exercise assignment screenshot">
+              <Image src="/coach-platform/assignment.png" alt="SeeMe coach prototype assigning the guided session Letting go. Leading better. to fictional client Alex Rivera" width={1440} height={1050} sizes="(max-width: 767px) 100vw, 54vw" />
             </a>
-            <figcaption>Local coach prototype · Session editor · Open image to explore</figcaption>
+            <figcaption>Between-session exercise · fictional client · local demo only</figcaption>
           </figure>
-          <p className="partner-product-takeaway">Create once. Make it personal. Use it again.</p>
-          <p className="partner-client-bridge"><Link href="/">See the client experience →</Link></p>
-          <p className="partner-preview-note">The connected coaching experience and client-approved sharing are in development.</p>
+          <div className="partner-feature-copy">
+            <div className="eyebrow">02 · Assign</div>
+            <h2 id="assignment-heading">Give each client a clear next step.</h2>
+            <p>Choose a guided session for a client and add it to their schedule. Keep the practice connected to the conversation that inspired it.</p>
+          </div>
         </div>
+      </motion.section>
+
+      <motion.section className="partner-client-bridge" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionRevealVariants} aria-labelledby="client-space-heading">
+        <div className="eyebrow">One coaching relationship</div>
+        <h2 id="client-space-heading">A clear workspace for you.<br /><em>A personal space for them.</em></h2>
+        <p>SeeMe is designed to bring your approach into a client experience built around their own goals. The coach-client connection and client-controlled sharing are in development.</p>
+        <Link href="/" className="partner-client-link">See the client experience <span aria-hidden="true">→</span></Link>
       </motion.section>
 
       <motion.div
