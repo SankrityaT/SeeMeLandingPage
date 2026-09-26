@@ -61,6 +61,10 @@ export default function PartnerPage() {
   );
   const heroStageScale = useTransform(heroStageProgress, [0, 0.72, 1], prefersReducedMotion ? [1, 1, 1] : [1, 0.985, 0.96]);
   const heroStageY = useTransform(heroStageProgress, [0, 0.72, 1], prefersReducedMotion ? [0, 0, 0] : [0, -12, -42]);
+  const sideExitProgress = useTransform(heroStageProgress, [0.12, 0.68, 1], [0, 0.78, 1]);
+  const leftSideExitX = useTransform(sideExitProgress, prefersReducedMotion ? [0, 1] : [0, 1], prefersReducedMotion ? [0, 0] : [0, -220]);
+  const rightSideExitX = useTransform(sideExitProgress, prefersReducedMotion ? [0, 1] : [0, 1], prefersReducedMotion ? [0, 0] : [0, 220]);
+  const sideExitOpacity = useTransform(sideExitProgress, prefersReducedMotion ? [0, 1] : [0, 0.72, 1], prefersReducedMotion ? [1, 1] : [1, 0.35, 0]);
   const [coachType, setCoachType] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -127,17 +131,12 @@ export default function PartnerPage() {
       <section className="partner-simple-hero" aria-labelledby="coach-hero-heading">
         <div className="partner-hero-content">
           <motion.div className="partner-hero-copy" variants={heroContentVariants} initial="hidden" animate="visible">
-            <motion.div className="eyebrow" variants={heroItemVariants}>For coaches who want their work to go further</motion.div>
+            <motion.div className="eyebrow" variants={heroItemVariants}>For coaches</motion.div>
             <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Better coaching for clients.<br /><em>More earning potential for you.</em></motion.h1>
-            <motion.p variants={heroItemVariants}>Turn your method into guided support clients can use between meetings. Reuse what you create, assign each client a next step, and manage the work in one place—so adding value doesn&apos;t mean starting from scratch.</motion.p>
+            <motion.p variants={heroItemVariants}>Turn your method into guided support clients can use between sessions.</motion.p>
             <motion.div className="partner-hero-actions" variants={heroItemVariants}>
               <SeemeButton href="#apply" variant="filled" size="lg">Join the coach pilot</SeemeButton>
               <Link href="#how-it-works" className="partner-explore-link">See how it works <span aria-hidden="true">↓</span></Link>
-            </motion.div>
-            <motion.div className="partner-hero-proof" variants={heroItemVariants} aria-label="Coach benefits">
-              <span><i aria-hidden="true">✦</i> A richer offer</span>
-              <span><i aria-hidden="true">✦</i> Your method, reused</span>
-              <span><i aria-hidden="true">✦</i> Every client in view</span>
             </motion.div>
           </motion.div>
 
@@ -160,29 +159,33 @@ export default function PartnerPage() {
               <figcaption>Clients &amp; sessions · local prototype with fictional data</figcaption>
             </motion.figure>
 
-            <motion.figure
-              className="partner-platform-image partner-hero-product partner-hero-product--left"
-              initial={prefersReducedMotion ? false : { opacity: 0, x: -130, y: 28, rotate: -7, scale: 0.94, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, x: 0, y: 0, rotate: -4, scale: 1, filter: 'blur(0px)' }}
-              transition={{ duration: 1.1, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <a href="/coach-platform/session-builder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
-                <Image src="/coach-platform/session-builder.png" alt="SeeMe session studio creating a guided coaching session" width={1440} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
-              </a>
-              <figcaption>Build your method</figcaption>
-            </motion.figure>
+            <motion.div className="partner-hero-product partner-hero-product--left" style={{ x: leftSideExitX, opacity: sideExitOpacity }}>
+              <motion.figure
+                className="partner-platform-image partner-hero-product-inner"
+                initial={prefersReducedMotion ? false : { opacity: 0, x: -130, y: 28, rotate: -7, scale: 0.94, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, x: 0, y: 0, rotate: -4, scale: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 1.1, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <a href="/coach-platform/session-builder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
+                  <Image src="/coach-platform/session-builder.png" alt="SeeMe session studio creating a guided coaching session" width={1440} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
+                </a>
+                <figcaption>Build your method</figcaption>
+              </motion.figure>
+            </motion.div>
 
-            <motion.figure
-              className="partner-platform-image partner-hero-product partner-hero-product--right"
-              initial={prefersReducedMotion ? false : { opacity: 0, x: 130, y: 30, rotate: 7, scale: 0.94, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, x: 0, y: 0, rotate: 4, scale: 1, filter: 'blur(0px)' }}
-              transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <a href="/coach-platform/assignment.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session assignment screenshot">
-                <Image src="/coach-platform/assignment.png" alt="SeeMe coach prototype assigning a guided exercise to a fictional client" width={1440} height={1050} sizes="(max-width: 767px) 42vw, 28vw" />
-              </a>
-              <figcaption>Support between sessions</figcaption>
-            </motion.figure>
+            <motion.div className="partner-hero-product partner-hero-product--right" style={{ x: rightSideExitX, opacity: sideExitOpacity }}>
+              <motion.figure
+                className="partner-platform-image partner-hero-product-inner"
+                initial={prefersReducedMotion ? false : { opacity: 0, x: 130, y: 30, rotate: 7, scale: 0.94, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, x: 0, y: 0, rotate: 4, scale: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <a href="/coach-platform/assignment.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session assignment screenshot">
+                  <Image src="/coach-platform/assignment.png" alt="SeeMe coach prototype assigning a guided exercise to a fictional client" width={1440} height={1050} sizes="(max-width: 767px) 42vw, 28vw" />
+                </a>
+                <figcaption>Support between sessions</figcaption>
+              </motion.figure>
+            </motion.div>
           </motion.div>
         </div>
       </section>
