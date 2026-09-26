@@ -1,9 +1,9 @@
 'use client';
 
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import SeemeButton from '@/components/ui/SeemeButton';
 import { getSupabase } from '@/lib/supabase';
 
@@ -49,6 +49,18 @@ const sectionRevealVariants = {
 
 export default function PartnerPage() {
   const prefersReducedMotion = useReducedMotion();
+  const heroStageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: heroStageProgress } = useScroll({
+    target: heroStageRef,
+    offset: ['start 80%', 'end 30%'],
+  });
+  const heroStageOpacity = useTransform(
+    heroStageProgress,
+    prefersReducedMotion ? [0, 1] : [0, 0.28, 0.72, 1],
+    prefersReducedMotion ? [1, 1] : [1, 1, 0.62, 0],
+  );
+  const heroStageScale = useTransform(heroStageProgress, [0, 0.72, 1], prefersReducedMotion ? [1, 1, 1] : [1, 0.985, 0.96]);
+  const heroStageY = useTransform(heroStageProgress, [0, 0.72, 1], prefersReducedMotion ? [0, 0, 0] : [0, -12, -42]);
   const [coachType, setCoachType] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -116,8 +128,8 @@ export default function PartnerPage() {
         <div className="partner-hero-content">
           <motion.div className="partner-hero-copy" variants={heroContentVariants} initial="hidden" animate="visible">
             <motion.div className="eyebrow" variants={heroItemVariants}>For coaches who want their work to go further</motion.div>
-            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Be in their corner.<br /><em>All week long.</em></motion.h1>
-            <motion.p variants={heroItemVariants}>Create a richer coaching offer with guided sessions built from your method, AI support between meetings, and one clear view of every client&apos;s next step.</motion.p>
+            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Better coaching for clients.<br /><em>More earning potential for you.</em></motion.h1>
+            <motion.p variants={heroItemVariants}>Turn your method into guided support clients can use between meetings. Reuse what you create, assign each client a next step, and manage the work in one place—so adding value doesn&apos;t mean starting from scratch.</motion.p>
             <motion.div className="partner-hero-actions" variants={heroItemVariants}>
               <SeemeButton href="#apply" variant="filled" size="lg">Join the coach pilot</SeemeButton>
               <Link href="#how-it-works" className="partner-explore-link">See how it works <span aria-hidden="true">↓</span></Link>
@@ -129,7 +141,13 @@ export default function PartnerPage() {
             </motion.div>
           </motion.div>
 
-          <div className="partner-hero-stage" role="group" aria-label="A preview of the SeeMe coaching workspace">
+          <motion.div
+            ref={heroStageRef}
+            className="partner-hero-stage"
+            role="group"
+            aria-label="A preview of the SeeMe coaching workspace"
+            style={{ opacity: heroStageOpacity, scale: heroStageScale, y: heroStageY }}
+          >
             <motion.figure
               className="partner-platform-image partner-hero-product partner-hero-product--main"
               initial={prefersReducedMotion ? false : { opacity: 0, y: 36, scale: 0.97, filter: 'blur(8px)' }}
@@ -165,7 +183,7 @@ export default function PartnerPage() {
               </a>
               <figcaption>Support between sessions</figcaption>
             </motion.figure>
-          </div>
+          </motion.div>
         </div>
       </section>
 

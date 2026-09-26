@@ -4338,7 +4338,7 @@ body > div {
   align-items: center;
   gap: clamp(30px, 4vw, 52px);
 }
-.partner-page .partner-hero-copy { width: min(100%, 1080px); text-align: center; }
+.partner-page .partner-hero-copy { width: min(100%, 1320px); text-align: center; }
 .partner-page .partner-hero-copy .eyebrow,
 .partner-page .partner-feature-copy .eyebrow,
 .partner-page .partner-client-bridge .eyebrow {
@@ -4348,7 +4348,7 @@ body > div {
 }
 .partner-page .partner-hero-copy h1 {
   margin: 0 auto 20px;
-  max-width: 1050px;
+  max-width: 1320px;
   font-size: clamp(54px, 7vw, 92px);
   line-height: 0.99;
   letter-spacing: -0.06em;
