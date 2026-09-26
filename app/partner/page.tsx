@@ -115,8 +115,8 @@ export default function PartnerPage() {
         <motion.div className="partner-hero-content" variants={heroContentVariants} initial="hidden" animate="visible">
           <div className="partner-hero-copy">
             <motion.div className="eyebrow" variants={heroItemVariants}>For coaches</motion.div>
-            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Help clients put<br /><em>coaching into practice.</em></motion.h1>
-            <motion.p variants={heroItemVariants}>See your clients, upcoming sessions, and exercises in one clear view. Build guided sessions around your method, then assign work between meetings.</motion.p>
+            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Your coaching.<br /><em>There between sessions.</em></motion.h1>
+            <motion.p variants={heroItemVariants}>Give clients guided sessions and AI support shaped by your approach—so your coaching can keep helping throughout their week.</motion.p>
             <motion.div className="cta-row partner-hero-actions" variants={heroItemVariants}>
               <SeemeButton href="#apply" variant="filled" size="lg">Apply to pilot</SeemeButton>
               <Link href="#how-it-works" className="partner-explore-link">Explore the workspace <span aria-hidden="true">↓</span></Link>
@@ -129,6 +129,26 @@ export default function PartnerPage() {
             <figcaption>Clients &amp; sessions · local prototype with fictional data</figcaption>
           </motion.figure>
         </motion.div>
+      </section>
+
+      <section className="partner-value-intro" aria-label="What SeeMe adds to your coaching">
+        <div className="partner-value-grid">
+          <article className="partner-value-card">
+            <span>01</span>
+            <h2>A richer offer</h2>
+            <p>Bring useful coaching support into the days between meetings.</p>
+          </article>
+          <article className="partner-value-card">
+            <span>02</span>
+            <h2>Your method, reused</h2>
+            <p>Build a guided session once, then assign it where it fits.</p>
+          </article>
+          <article className="partner-value-card">
+            <span>03</span>
+            <h2>One clearer view</h2>
+            <p>Bring clients, planned sessions, and client updates into one view.</p>
+          </article>
+        </div>
       </section>
 
       <motion.section id="how-it-works" className="section partner-product-section" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="session-builder-heading">
@@ -162,6 +182,20 @@ export default function PartnerPage() {
           </div>
         </div>
       </motion.section>
+
+      <section className="partner-economics" aria-labelledby="partner-economics-heading">
+        <div className="partner-economics-copy">
+          <div className="eyebrow">A simple example</div>
+          <h2 id="partner-economics-heading">A richer offer can add up.</h2>
+          <p>If 10 clients chose a $25 monthly support add-on, that would be $250 in additional gross revenue.</p>
+        </div>
+        <div className="partner-economics-card" aria-label="Illustrative monthly revenue example">
+          <div><strong>$250</strong><span>additional gross revenue</span></div>
+          <div className="partner-economics-minus">− $99 <span>proposed SeeMe plan</span></div>
+          <div className="partner-economics-result"><strong>$151</strong><span>before fees, coach time, other costs, and taxes</span></div>
+          <p>Illustrative only: assumes all 10 clients opt in at $25/month. The plan price and client demand are unvalidated. Not a revenue guarantee or net profit.</p>
+        </div>
+      </section>
 
       <motion.section className="partner-client-bridge" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionRevealVariants} aria-labelledby="client-space-heading">
         <div className="eyebrow">One coaching relationship</div>

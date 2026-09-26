@@ -4411,6 +4411,49 @@ body > div {
 .partner-page .partner-client-link { margin-top: 24px; color: #ff9bb0; }
 .partner-page .new-landing-footer { border-top: 1px solid rgba(255, 180, 160, 0.08); }
 
+.partner-page .partner-value-intro {
+  padding: 28px 28px 52px;
+  background: linear-gradient(180deg, #1a100e 0%, #1c1210 100%);
+}
+.partner-page .partner-value-grid {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.partner-page .partner-value-card {
+  padding: 23px 24px 25px;
+  border: 1px solid rgba(255, 180, 190, 0.13);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);
+}
+.partner-page .partner-value-card > span { color: #ff9bb0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; }
+.partner-page .partner-value-card h2 { margin: 12px 0 7px; font-size: 20px; letter-spacing: -0.025em; }
+.partner-page .partner-value-card p { margin: 0; color: var(--seeme-subtext); font-size: 14px; line-height: 1.65; }
+.partner-page .partner-economics {
+  width: min(1120px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 100px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(330px, 1.1fr);
+  align-items: center;
+  gap: clamp(40px, 8vw, 100px);
+}
+.partner-page .partner-economics-copy { max-width: 430px; }
+.partner-page .partner-economics-copy .eyebrow { color: #ffd5dc; }
+.partner-page .partner-economics-copy h2 { margin: 18px 0 14px; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.045em; }
+.partner-page .partner-economics-copy > p { margin: 0; color: var(--seeme-subtext); font-size: 16px; line-height: 1.75; }
+.partner-page .partner-economics-card { padding: 27px 30px 22px; border: 1px solid rgba(255, 180, 190, 0.17); border-radius: 18px; background: linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)); }
+.partner-page .partner-economics-card > div:first-child,
+.partner-page .partner-economics-result { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.partner-page .partner-economics-card strong { font-size: clamp(32px, 4vw, 44px); letter-spacing: -0.055em; }
+.partner-page .partner-economics-card span { color: var(--seeme-subtext); font-size: 13px; line-height: 1.5; text-align: right; }
+.partner-page .partner-economics-minus { margin: 15px 0; padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.09); border-bottom: 1px solid rgba(255,255,255,0.09); display: flex; justify-content: space-between; align-items: baseline; color: #ffe1e7; font-weight: 650; }
+.partner-page .partner-economics-minus span { font-weight: 400; }
+.partner-page .partner-economics-result strong { color: #ff9bb0; }
+.partner-page .partner-economics-card > p { margin: 18px 0 0; color: var(--seeme-subtext); font-size: 11px; line-height: 1.6; }
+
 @media (max-width: 850px) {
   .partner-page .partner-hero-content { grid-template-columns: minmax(0, 1fr); gap: 38px; }
   .partner-page .partner-hero-copy { max-width: 660px; }
@@ -4421,6 +4464,8 @@ body > div {
   .partner-page .partner-feature-row--reverse .partner-platform-image,
   .partner-page .partner-feature-row--reverse .partner-feature-copy { grid-column: auto; grid-row: auto; }
   .partner-page .partner-feature-copy { max-width: 640px; }
+  .partner-page .partner-economics { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .partner-page .partner-economics-copy { max-width: 640px; }
 }
 @media (max-width: 767px) {
   .partner-page .partner-simple-hero { min-height: 0; padding: 86px 20px 64px; }
@@ -4438,4 +4483,13 @@ body > div {
   .partner-page .partner-feature-copy > p,
   .partner-page .partner-client-bridge > p { font-size: 15px; }
   .partner-page .partner-client-bridge { padding: 68px 22px; }
+  .partner-page .partner-value-intro { padding: 18px 18px 42px; }
+  .partner-page .partner-value-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .partner-page .partner-value-card { padding: 18px 19px; }
+  .partner-page .partner-value-card h2 { margin-top: 8px; }
+  .partner-page .partner-economics { width: calc(100% - 36px); padding: 56px 0; gap: 23px; }
+  .partner-page .partner-economics-card { padding: 22px 19px 18px; }
+  .partner-page .partner-economics-card > div:first-child,
+  .partner-page .partner-economics-result { align-items: flex-start; }
+  .partner-page .partner-economics-card span { max-width: 48%; }
 }
