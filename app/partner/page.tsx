@@ -115,8 +115,8 @@ export default function PartnerPage() {
         <motion.div className="partner-hero-content" variants={heroContentVariants} initial="hidden" animate="visible">
           <div className="partner-hero-copy">
             <motion.div className="eyebrow" variants={heroItemVariants}>For coaches</motion.div>
-            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Your coaching.<br /><em>There between sessions.</em></motion.h1>
-            <motion.p variants={heroItemVariants}>Give clients guided sessions and AI support shaped by your approach—so your coaching can keep helping throughout their week.</motion.p>
+            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>The session ends.<br /><em>Your coaching keeps going.</em></motion.h1>
+            <motion.p variants={heroItemVariants}>Give clients guided next steps and AI support shaped by your method—so they can keep putting your coaching into practice all week.</motion.p>
             <motion.div className="cta-row partner-hero-actions" variants={heroItemVariants}>
               <SeemeButton href="#apply" variant="filled" size="lg">Apply to pilot</SeemeButton>
               <Link href="#how-it-works" className="partner-explore-link">Explore the workspace <span aria-hidden="true">↓</span></Link>
@@ -153,33 +153,33 @@ export default function PartnerPage() {
 
       <motion.section id="how-it-works" className="section partner-product-section" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="session-builder-heading">
         <div className="inner partner-feature-row">
+          <div className="partner-feature-copy">
+            <div className="eyebrow">01 · Build</div>
+            <h2 id="session-builder-heading">Turn your method into guided practice.</h2>
+            <p>Start with a client goal. Shape the exercise, try the experience, and save it for the next time it fits.</p>
+          </div>
           <figure className="partner-platform-image">
             <a href="/coach-platform/session-builder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session builder screenshot">
               <Image src="/coach-platform/session-builder.png" alt="SeeMe session studio with an editable coaching intention, session length, cover options and a client-facing preview" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 54vw" />
             </a>
             <figcaption>Session studio · local prototype · sample session</figcaption>
           </figure>
-          <div className="partner-feature-copy">
-            <div className="eyebrow">01 · Build</div>
-            <h2 id="session-builder-heading">Make your method a guided session.</h2>
-            <p>Start with a client goal. Shape the exercise, try the client experience, and save it to use when it fits.</p>
-          </div>
         </div>
       </motion.section>
 
       <motion.section className="section partner-product-section partner-product-section--alt" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionRevealVariants} aria-labelledby="assignment-heading">
-        <div className="inner partner-feature-row partner-feature-row--reverse">
+        <div className="inner partner-feature-row">
+          <div className="partner-feature-copy">
+            <div className="eyebrow">02 · Assign</div>
+            <h2 id="assignment-heading">Give every client a next step.</h2>
+            <p>Choose the guided session that fits and put it on their schedule, ready for the days between meetings.</p>
+          </div>
           <figure className="partner-platform-image">
             <a href="/coach-platform/assignment.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size guided exercise assignment screenshot">
               <Image src="/coach-platform/assignment.png" alt="SeeMe coach prototype assigning the guided session Letting go. Leading better. to fictional client Alex Rivera" width={1440} height={1050} sizes="(max-width: 767px) 100vw, 54vw" />
             </a>
             <figcaption>Between-session exercise · fictional client · local demo only</figcaption>
           </figure>
-          <div className="partner-feature-copy">
-            <div className="eyebrow">02 · Assign</div>
-            <h2 id="assignment-heading">Give each client a clear next step.</h2>
-            <p>Choose a guided session for a client and add it to their schedule. Keep the practice connected to the conversation that inspired it.</p>
-          </div>
         </div>
       </motion.section>
 

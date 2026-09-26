@@ -4363,22 +4363,20 @@ body > div {
 .partner-page .partner-platform-image figcaption { margin-top: 12px; color: var(--seeme-subtext); font-size: 12px; line-height: 1.6; }
 .partner-page .partner-hero-image figcaption { text-align: right; }
 .partner-page .partner-product-section {
-  padding: clamp(72px, 9vw, 120px) 28px;
+  padding: clamp(64px, 6vw, 80px) 28px;
   background: linear-gradient(180deg, #1c1210 0%, #211714 100%);
 }
 .partner-page .partner-product-section--alt { background: linear-gradient(180deg, #211714 0%, #251916 100%); }
 .partner-page .partner-feature-row {
-  width: min(1240px, 100%);
+  width: min(1120px, 100%);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(270px, 0.82fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(40px, 7vw, 104px);
+  gap: clamp(24px, 3.5vw, 42px);
 }
-.partner-page .partner-feature-row--reverse { grid-template-columns: minmax(270px, 0.82fr) minmax(0, 1.18fr); }
-.partner-page .partner-feature-row--reverse .partner-platform-image { grid-column: 2; grid-row: 1; }
-.partner-page .partner-feature-row--reverse .partner-feature-copy { grid-column: 1; grid-row: 1; }
-.partner-page .partner-feature-copy { max-width: 430px; }
+.partner-page .partner-feature-copy { max-width: 900px; text-align: center; }
+.partner-page .partner-feature-copy .eyebrow { margin-bottom: 14px; }
 .partner-page .partner-feature-copy h2,
 .partner-page .partner-client-bridge h2 {
   margin: 0 0 18px;
@@ -4386,6 +4384,7 @@ body > div {
   line-height: 1.08;
   letter-spacing: -0.045em;
 }
+.partner-page .partner-feature-copy h2 { font-size: clamp(32px, 3.4vw, 46px); }
 .partner-page .partner-feature-copy > p,
 .partner-page .partner-client-bridge > p {
   margin: 0;
@@ -4394,6 +4393,14 @@ body > div {
   line-height: 1.75;
   text-wrap: pretty;
 }
+.partner-page .partner-feature-copy > p { max-width: 680px; margin: 0 auto; }
+.partner-page .partner-product-section .partner-platform-image { width: min(100%, 1060px); }
+.partner-page .partner-product-section .partner-platform-image a {
+  border-color: rgba(255, 180, 190, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32), 0 0 50px rgba(254, 63, 106, 0.045);
+}
+.partner-page .partner-product-section .partner-platform-image figcaption { text-align: center; }
 .partner-page .partner-client-bridge {
   max-width: none;
   margin: 0;
@@ -4459,11 +4466,8 @@ body > div {
   .partner-page .partner-hero-copy { max-width: 660px; }
   .partner-page .partner-hero-copy h1 { font-size: clamp(42px, 8vw, 66px); }
   .partner-page .partner-hero-image { width: min(100%, 760px); justify-self: center; }
-  .partner-page .partner-feature-row,
-  .partner-page .partner-feature-row--reverse { grid-template-columns: minmax(0, 1fr); gap: 30px; }
-  .partner-page .partner-feature-row--reverse .partner-platform-image,
-  .partner-page .partner-feature-row--reverse .partner-feature-copy { grid-column: auto; grid-row: auto; }
-  .partner-page .partner-feature-copy { max-width: 640px; }
+  .partner-page .partner-feature-row { gap: 30px; }
+  .partner-page .partner-feature-copy { max-width: 760px; }
   .partner-page .partner-economics { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .partner-page .partner-economics-copy { max-width: 640px; }
 }
@@ -4476,8 +4480,7 @@ body > div {
   .partner-page .partner-platform-image a { border-radius: 12px; }
   .partner-page .partner-hero-image figcaption { text-align: left; }
   .partner-page .partner-product-section { padding: 64px 18px; }
-  .partner-page .partner-feature-row,
-  .partner-page .partner-feature-row--reverse { gap: 26px; }
+  .partner-page .partner-feature-row { gap: 26px; }
   .partner-page .partner-feature-copy h2,
   .partner-page .partner-client-bridge h2 { font-size: clamp(30px, 8vw, 42px); }
   .partner-page .partner-feature-copy > p,
