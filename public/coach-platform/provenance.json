@@ -26,5 +26,14 @@
       "working_tree": "Uncommitted local prototype changes were present; screenshot reflects the running local app, not only the recorded commit.",
       "sha256": "c70adb6d571a727a0fdb5e44eec2ca60b0d84bb7803110c7de7350b95e116d28"
     }
+  ],
+  "generated_assets": [
+    {
+      "file": "coach-hero-background.jpg",
+      "created_at": "2026-09-26",
+      "source": "OpenAI built-in ImageGen",
+      "prompt_summary": "Subtle cinematic espresso, plum, and muted rose horizon with translucent flowing light; open dark center for hero copy; no text or product UI.",
+      "sha256": "15e583b59d5e3a0773c7b6400c3cb83ec8bb1d9bd4e902bf536c144132fe9865"
+    }
   ]
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -48,6 +48,7 @@ const sectionRevealVariants = {
 };
 
 export default function PartnerPage() {
+  const prefersReducedMotion = useReducedMotion();
   const [coachType, setCoachType] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -112,23 +113,60 @@ export default function PartnerPage() {
       </div>
 
       <section className="partner-simple-hero" aria-labelledby="coach-hero-heading">
-        <motion.div className="partner-hero-content" variants={heroContentVariants} initial="hidden" animate="visible">
-          <div className="partner-hero-copy">
-            <motion.div className="eyebrow" variants={heroItemVariants}>For coaches</motion.div>
-            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>The session ends.<br /><em>Your coaching keeps going.</em></motion.h1>
-            <motion.p variants={heroItemVariants}>Give clients guided next steps and AI support shaped by your method—so they can keep putting your coaching into practice all week.</motion.p>
-            <motion.div className="cta-row partner-hero-actions" variants={heroItemVariants}>
-              <SeemeButton href="#apply" variant="filled" size="lg">Apply to pilot</SeemeButton>
-              <Link href="#how-it-works" className="partner-explore-link">Explore the workspace <span aria-hidden="true">↓</span></Link>
+        <div className="partner-hero-content">
+          <motion.div className="partner-hero-copy" variants={heroContentVariants} initial="hidden" animate="visible">
+            <motion.div className="eyebrow" variants={heroItemVariants}>For coaches who want their work to go further</motion.div>
+            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Be in their corner.<br /><em>All week long.</em></motion.h1>
+            <motion.p variants={heroItemVariants}>Create a richer coaching offer with guided sessions built from your method, AI support between meetings, and one clear view of every client&apos;s next step.</motion.p>
+            <motion.div className="partner-hero-actions" variants={heroItemVariants}>
+              <SeemeButton href="#apply" variant="filled" size="lg">Join the coach pilot</SeemeButton>
+              <Link href="#how-it-works" className="partner-explore-link">See how it works <span aria-hidden="true">↓</span></Link>
             </motion.div>
+            <motion.div className="partner-hero-proof" variants={heroItemVariants} aria-label="Coach benefits">
+              <span><i aria-hidden="true">✦</i> A richer offer</span>
+              <span><i aria-hidden="true">✦</i> Your method, reused</span>
+              <span><i aria-hidden="true">✦</i> Every client in view</span>
+            </motion.div>
+          </motion.div>
+
+          <div className="partner-hero-stage" role="group" aria-label="A preview of the SeeMe coaching workspace">
+            <motion.figure
+              className="partner-platform-image partner-hero-product partner-hero-product--main"
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 36, scale: 0.97, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <a href="/coach-platform/clients-and-sessions.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size client overview screenshot">
+                <Image src="/coach-platform/clients-and-sessions.png" alt="SeeMe coaching prototype showing the coach&apos;s client roster, weekly calendar of sessions and exercises, and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 70vw" priority />
+              </a>
+              <figcaption>Clients &amp; sessions · local prototype with fictional data</figcaption>
+            </motion.figure>
+
+            <motion.figure
+              className="partner-platform-image partner-hero-product partner-hero-product--left"
+              initial={prefersReducedMotion ? false : { opacity: 0, x: -130, y: 28, rotate: -7, scale: 0.94, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, x: 0, y: 0, rotate: -4, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 1.1, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <a href="/coach-platform/session-builder.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
+                <Image src="/coach-platform/session-builder.png" alt="SeeMe session studio creating a guided coaching session" width={1440} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
+              </a>
+              <figcaption>Build your method</figcaption>
+            </motion.figure>
+
+            <motion.figure
+              className="partner-platform-image partner-hero-product partner-hero-product--right"
+              initial={prefersReducedMotion ? false : { opacity: 0, x: 130, y: 30, rotate: 7, scale: 0.94, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, x: 0, y: 0, rotate: 4, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <a href="/coach-platform/assignment.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session assignment screenshot">
+                <Image src="/coach-platform/assignment.png" alt="SeeMe coach prototype assigning a guided exercise to a fictional client" width={1440} height={1050} sizes="(max-width: 767px) 42vw, 28vw" />
+              </a>
+              <figcaption>Support between sessions</figcaption>
+            </motion.figure>
           </div>
-          <motion.figure className="partner-platform-image partner-hero-image" variants={heroItemVariants}>
-            <a href="/coach-platform/clients-and-sessions.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size client overview screenshot">
-              <Image src="/coach-platform/clients-and-sessions.png" alt="SeeMe coaching prototype showing the coach's client roster, weekly calendar of sessions and exercises, and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 58vw" priority />
-            </a>
-            <figcaption>Clients &amp; sessions · local prototype with fictional data</figcaption>
-          </motion.figure>
-        </motion.div>
+        </div>
       </section>
 
       <section className="partner-value-intro" aria-label="What SeeMe adds to your coaching">
