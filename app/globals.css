@@ -4350,7 +4350,7 @@ body > div {
   margin: 0 auto 20px;
   max-width: 1320px;
   font-size: clamp(54px, 7vw, 92px);
-  line-height: 0.99;
+  line-height: 1.04;
   letter-spacing: -0.06em;
   text-shadow: 0 8px 34px rgba(17, 8, 9, 0.35);
 }
