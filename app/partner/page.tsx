@@ -1,9 +1,9 @@
 'use client';
 
-import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, scroll, useMotionValue, useReducedMotion, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { coachImagePreviews } from '@/lib/coach-image-previews';
 import SeemeButton from '@/components/ui/SeemeButton';
 import LandingActionPanel from '@/components/landing/LandingActionPanel';
@@ -74,10 +74,27 @@ const coachStory = [
 export default function PartnerPage() {
   const prefersReducedMotion = useReducedMotion();
   const heroStageRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: heroStageProgress } = useScroll({
-    target: heroStageRef,
-    offset: ['start 80%', 'end 30%'],
-  });
+  const heroStageProgress = useMotionValue(0);
+  useEffect(() => {
+    const staticHero = window.matchMedia('(max-width: 767px), (pointer: coarse), (prefers-reduced-motion: reduce)');
+    let stop: (() => void) | undefined;
+    const update = () => {
+      stop?.();
+      stop = undefined;
+      heroStageProgress.set(0);
+      if (staticHero.matches || !heroStageRef.current) return;
+      stop = scroll((progress: number) => heroStageProgress.set(progress), {
+        target: heroStageRef.current,
+        offset: ['start 80%', 'end 30%'],
+      });
+    };
+    update();
+    staticHero.addEventListener('change', update);
+    return () => {
+      stop?.();
+      staticHero.removeEventListener('change', update);
+    };
+  }, [heroStageProgress]);
   const heroStageOpacity = useTransform(
     heroStageProgress,
     prefersReducedMotion ? [0, 1] : [0, 0.28, 0.72, 1],

@@ -4574,3 +4574,20 @@ body > div {
     background-image: var(--preview-mobile);
   }
 }
+
+/* Let the document own mobile scrolling; hidden overflow creates nested scrollers.
+   Keep horizontal clipping without clipping each section's vertical paint area. */
+@media (max-width: 767px), (pointer: coarse) {
+  html:has(.partner-page),
+  body:has(.partner-page) {
+    overflow: visible;
+    background: #1c1210;
+  }
+  body > .partner-page { overflow: clip visible; }
+  .partner-page .partner-product-section { overflow: visible; }
+  .partner-page .partner-product-section::before { content: none; }
+  .partner-page .eyebrow {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

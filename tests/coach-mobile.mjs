@@ -73,6 +73,27 @@ export function coachMobileTests(test, expect) {
       await expect.poll(() => img.evaluate(image => image.naturalWidth)).toBeGreaterThan(0);
     }
   });
+  test('mobile sections paint in the document scroll surface', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/partner');
+    await expect(page.locator('body')).toHaveCSS('overflow-y', 'visible');
+    await expect(page.locator('.partner-page')).toHaveCSS('overflow-y', 'visible');
+    await expect(page.locator('.partner-page')).toHaveCSS('overflow-x', 'clip');
+    const stage = page.locator('.partner-hero-stage');
+    const styleBefore = await stage.getAttribute('style');
+    for (const section of await page.locator('.partner-product-section').all()) {
+      await expect(section).toHaveCSS('overflow-y', 'visible');
+      expect(await section.evaluate(el => getComputedStyle(el, '::before').content)).toBe('none');
+      await section.evaluate(el => window.scrollTo(0, el.offsetTop - 100));
+      await expect(section.locator('h2')).toBeInViewport();
+      await expect(section.locator('.eyebrow')).toHaveCSS('backdrop-filter', 'none');
+      // Capture the painted viewport immediately after each large scroll jump.
+      // Retained in test artifacts for visual inspection, not a timing guarantee.
+      await page.screenshot({ path: test.info().outputPath(`scroll-${await section.getAttribute('class')}.png`) });
+    }
+    expect(await stage.getAttribute('style')).toBe(styleBefore);
+    expect(await page.evaluate(() => document.scrollingElement === document.documentElement && scrollY > 1000)).toBe(true);
+  });
   test('coach content respects reduced motion', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/partner');
