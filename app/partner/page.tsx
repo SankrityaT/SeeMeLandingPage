@@ -136,7 +136,7 @@ export default function PartnerPage() {
             <motion.p variants={heroItemVariants}>A digital extension of your coaching, shaped by your methods and guided by you.</motion.p>
             <motion.div className="partner-hero-actions" variants={heroItemVariants}>
               <SeemeButton href="#apply" variant="filled" size="lg">Join the coach pilot</SeemeButton>
-              <Link href="#how-it-works" className="partner-explore-link">See how it works <span aria-hidden="true">↓</span></Link>
+              <Link href="#how-it-works" className="partner-explore-link">Explore the platform <span aria-hidden="true">↓</span></Link>
             </motion.div>
           </motion.div>
 
