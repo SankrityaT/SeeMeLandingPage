@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import SeemeButton from '@/components/ui/SeemeButton';
+import LandingActionPanel from '@/components/landing/LandingActionPanel';
 import { getSupabase } from '@/lib/supabase';
 import { COACH_PARTNERS } from '@/lib/coach-partners';
 
@@ -285,26 +286,17 @@ export default function PartnerPage() {
         <Link href="/" className="partner-client-link">See the client experience <span aria-hidden="true">→</span></Link>
       </motion.section>
 
-      <motion.div
-        className="apply"
+      <LandingActionPanel
         id="apply"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionRevealVariants}
+        title={<>Shape the next chapter<br />of your coaching.</>}
+        description="Join a small group of coaches shaping SeeMe. Bring your approach. We’ll explore the fit together."
       >
-        <h2>
-          Shape the next chapter
-          <br />
-          <em>of your coaching.</em>
-        </h2>
-        <p>We&apos;re inviting a small group of coaches to help shape SeeMe. Bring your approach. We&apos;ll explore the fit together.</p>
-
-        <div className="form">
+        <div className="partner-pilot-form">
           <AnimatePresence mode="wait">
             {submitted && !submitError ? (
               <motion.div
                 key="success"
+                role="status"
                 className="partner-success-card"
                 initial={{ opacity: 0, y: 24, scale: 0.98, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
@@ -325,12 +317,12 @@ export default function PartnerPage() {
               >
                 <div className="f-field">
                   <label htmlFor="partner-name">Full name</label>
-                  <input id="partner-name" type="text" placeholder="Sarah Kim" value={name} onChange={(event) => setName(event.target.value)} />
+                  <input id="partner-name" type="text" autoComplete="name" placeholder="Sarah Kim" value={name} onChange={(event) => setName(event.target.value)} />
                 </div>
 
                 <div className="f-field">
                   <label htmlFor="partner-email">Email</label>
-                  <input id="partner-email" type="email" placeholder="sarah@yourpractice.com" value={email} onChange={(event) => setEmail(event.target.value)} />
+                  <input id="partner-email" type="email" autoComplete="email" placeholder="sarah@yourpractice.com" value={email} onChange={(event) => setEmail(event.target.value)} />
                 </div>
 
                 <div className="f-field">
@@ -359,13 +351,13 @@ export default function PartnerPage() {
                   {submitting ? 'Submitting...' : 'Apply to pilot'}
                 </SeemeButton>
 
-                {submitError ? <p className="f-note partner-form-error">{submitError}</p> : null}
+                {submitError ? <p role="alert" className="f-note partner-form-error">{submitError}</p> : null}
                 {!submitError ? <p className="f-note">No commitment. We&apos;ll be in touch to discuss the pilot.</p> : null}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-      </motion.div>
+      </LandingActionPanel>
 
       <footer className="new-landing-footer">
         <div className="new-landing-footer-links">

@@ -41,3 +41,11 @@ Verification: website build/TypeScript, scoped ESLint, Chromium and WebKit at 14
 ## Walkthrough cleanup — 2026-09-27
 
 Removed the introductory bridge copy, numeric prefixes from all four section labels, and screenshot footers (including the hero caption). The Explore link now targets the first product section directly; full-size views remain available by activating each image. Static presentation and anchor placement only; no service architecture impact.
+
+## Shared closing invitation — 2026-09-27
+
+Both the client “Try for Free” section and the coach pilot application now use `components/landing/LandingActionPanel.tsx`. The shared component owns the section, heading, description and existing B2C background-card pattern. Matching CSS controls card width, typography, padding, background contrast and responsive corners. The partner-only button overrides and legacy oversized application section styles were removed so both pages use `SeemeButton` consistently.
+
+Coach fields retain their current state and submission handler, with readable sentence-case labels, left alignment, 12px corners, explicit keyboard focus and autofill hints. Error and success messages now have alert/status roles. No Supabase request, payload, persistence, authentication or deployment boundary changed; no architecture diagram change is needed.
+
+Verification: production build/TypeScript and scoped lint passed. Chromium and WebKit compared computed closing-card styles across both routes and checked 1440/390/320 layouts, pilot anchor navigation, empty-form validation and keyboard progression. Desktop/mobile images were visually reviewed. External requests were isolated; no valid application was submitted and backend behavior was not tested.

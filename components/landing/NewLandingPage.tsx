@@ -6,6 +6,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import SeemeButton from '@/components/ui/SeemeButton';
+import LandingActionPanel from '@/components/landing/LandingActionPanel';
 import { COACH_PARTNERS as COACHES } from '@/lib/coach-partners';
 
 // ========== TYPES ==========
@@ -777,21 +778,11 @@ export const NewLandingPage = () => {
       </section>
 
       {/* ==================== SECTION 8: TRY FOR FREE ==================== */}
-      <section className="new-landing-section new-landing-try-free">
-
-        <div className="new-landing-try-free-content">
-          <FadeInWhenVisible>
-            <h2 className="new-landing-section-heading new-landing-try-free-heading">
-              Try for Free
-            </h2>
-          </FadeInWhenVisible>
-
-          <FadeInWhenVisible delay={0.15}>
-            <p className="new-landing-section-subtext new-landing-try-free-subtext">
-              No account and signup required.
-            </p>
-          </FadeInWhenVisible>
-
+      <LandingActionPanel
+        id="try-free"
+        title="Try for Free"
+        description="No account and signup required."
+      >
           <FadeInWhenVisible delay={0.3}>
             <motion.div
               className="new-landing-appstore-btn"
@@ -825,8 +816,7 @@ export const NewLandingPage = () => {
               </p>
             </div>
           </FadeInWhenVisible>
-        </div>
-      </section>
+      </LandingActionPanel>
 
       {/* ==================== FOOTER ==================== */}
       <footer className="new-landing-footer">
