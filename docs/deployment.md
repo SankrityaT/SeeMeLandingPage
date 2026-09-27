@@ -6,7 +6,7 @@ Verified through authenticated Cloudflare CLI and dashboard inspection on 2026-0
 - Existing project: `seemelandingpage`; production branch `main`.
 - Domains: `https://seemeai.app` and `https://www.seemeai.app`.
 - Git integration: `SankrityaT/SeeMeLandingPage`, automatic deployments enabled.
-- Dashboard build: `npx @cloudflare/next-on-pages@1`; output `.vercel/output/static`.
+- Dashboard build: `npm_config_legacy_peer_deps=true npx --yes @cloudflare/next-on-pages@1.13.16`; output `.vercel/output/static`.
 - Runtime: compatibility date `2025-12-17`, `nodejs_compat`.
 - Prior production rollback candidate: `360c4af5-b4f1-4c5c-9a8e-b492a162ceb3`, source `6afa569`.
 - Vercel project is a separate deployment and does not own these custom domains.
@@ -43,3 +43,9 @@ An old R2 setup document contained credential values. Current documentation now 
 - No real signup was submitted; database writes and migrations were not tested. No DNS changes.
 - Preview runtime aligned with production's `nodejs_compat`; provider variable values preserved.
 - Rollback: `360c4af5-b4f1-4c5c-9a8e-b492a162ceb3`.
+
+## Mobile release build fix — 2026-09-27
+
+The first Git deployment of `f4f7a4b` failed before compilation: npm attempted to combine the legacy adapter's v4 Workers types with latest Wrangler's v5 peer requirement. Updated the existing project's build command to the explicitly pinned adapter plus scoped `npm_config_legacy_peer_deps=true`, matching the successful local production-adapter build. Output directory, domains, provider variables and runtime remain unchanged. This compatibility setting is restricted to the adapter command; no repository-wide peer-check bypass was added.
+
+Mobile feature: `6e699b7`; verified preview `48bbba06.seemelandingpage.pages.dev`. Six isolated suite tests passed in Chromium/WebKit, covering widths 320–1440 and reduced motion. Both landing pages passed preview smoke checks; mobile content also remained visible without JavaScript. Rollback for this release: `c348dd95-957d-4ed2-a29e-43b32edcbeaf`.
