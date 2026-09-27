@@ -213,8 +213,8 @@ body > div {
     'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
   --new-landing-section-space-desktop: 72px;
   --new-landing-section-space-mobile: 56px;
-  --landing-hero-title-size: clamp(1.6rem, 3.5vw, 2.8rem);
-  --landing-hero-title-weight: 700;
+  --landing-heading-size: clamp(2.125rem, 4vw, 3.25rem);
+  --landing-heading-weight: 700;
   --landing-hero-tagline-size: clamp(0.85rem, 1.5vw, 1.1rem);
 
   /* Landing page cohesive palette — warm rose tones matching B2B brand */
@@ -408,11 +408,7 @@ body > div {
 
 .new-landing-mockups-title {
   font-family: var(--font-sf-pro);
-  font-weight: var(--landing-hero-title-weight);
-  font-size: var(--landing-hero-title-size);
   color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
   margin: 0 0 12px 0;
   font-style: normal;
   text-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
@@ -420,11 +416,7 @@ body > div {
 
 .new-landing-mockups-title-mobile {
   font-family: var(--font-sf-pro);
-  font-weight: var(--landing-hero-title-weight);
-  font-size: var(--landing-hero-title-size);
   color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
   margin: 0 0 12px 0;
   font-style: normal;
   text-align: center;
@@ -542,11 +534,7 @@ body > div {
 
 .new-landing-section-heading {
   font-family: var(--font-sf-pro);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: var(--nl-text);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
   margin: 0 0 16px 0;
 }
 
@@ -1009,7 +997,6 @@ body > div {
 .new-landing-try-free-heading {
   color: #ffffff;
   margin-bottom: 0;
-  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
 }
 
 .new-landing-try-free-subtext {
@@ -1208,8 +1195,6 @@ body > div {
 
   .new-landing-section-heading {
     font-family: var(--font-sf-pro);
-    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
-    font-weight: 700;
   }
 
   .new-landing-section-subtext {
@@ -4288,12 +4273,8 @@ body > div {
   background: rgba(255, 255, 255, 0.035);
 }
 .partner-page .partner-hero-copy h1 {
-  font-weight: var(--landing-hero-title-weight);
   margin: 0 auto 20px;
   max-width: 1320px;
-  font-size: var(--landing-hero-title-size);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
   text-shadow: 0 8px 34px rgba(17, 8, 9, 0.35);
 }
 .partner-page .partner-hero-copy h1 em {
@@ -4380,11 +4361,7 @@ body > div {
 .partner-page .partner-feature-copy h2,
 .partner-page .partner-client-bridge h2 {
   margin: 0 0 18px;
-  font-size: clamp(32px, 4vw, 50px);
-  line-height: 1.08;
-  letter-spacing: -0.045em;
 }
-.partner-page .partner-feature-copy h2 { font-size: clamp(32px, 3.4vw, 46px); }
 .partner-page .partner-feature-copy > p,
 .partner-page .partner-client-bridge > p {
   margin: 0;
@@ -4467,8 +4444,6 @@ body > div {
   .partner-page .partner-platform-image a { border-radius: 12px; }
   .partner-page .partner-product-section { padding: 64px 18px; }
   .partner-page .partner-feature-row { gap: 26px; }
-  .partner-page .partner-feature-copy h2,
-  .partner-page .partner-client-bridge h2 { font-size: clamp(30px, 8vw, 42px); }
   .partner-page .partner-feature-copy > p,
   .partner-page .partner-client-bridge > p { font-size: 15px; }
   .partner-page .partner-client-bridge { padding: 68px 22px; }
@@ -4498,7 +4473,7 @@ body > div {
   background: radial-gradient(ellipse at 50% 45%, rgba(254, 63, 106, 0.055), transparent 68%), #1c1210;
 }
 .partner-page .partner-credibility .eyebrow { color: #ffd5dc; border-color: rgba(255,180,190,0.22); background: rgba(255,255,255,0.035); }
-.partner-page .partner-credibility h2 { margin: 22px 0 20px; font-size: clamp(34px, 4vw, 52px); line-height: 1.16; letter-spacing: -0.045em; }
+.partner-page .partner-credibility h2 { margin: 22px 0 20px; }
 .partner-page .partner-credibility h2 em { font-style: normal; color: #ff9bb0; }
 .partner-page .partner-credibility-intro { max-width: 630px; margin: 0 auto; color: var(--seeme-subtext); font-size: 17px; line-height: 1.7; text-wrap: pretty; }
 .partner-page .partner-credibility-label { margin: 38px 0 18px; color: var(--seeme-subtext); font-size: 13px; }
@@ -4548,9 +4523,18 @@ body > div {
   .partner-page .partner-pilot-form > div { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
 
-@media (max-width: 767px) {
-  :root {
-    --landing-hero-title-size: clamp(1.5rem, 7.5vw, 2.2rem);
-    --landing-hero-title-weight: 800;
-  }
+
+/* Main titles share the approved credibility-heading scale on both sites. */
+.new-landing-mockups-title,
+.new-landing-mockups-title-mobile,
+.new-landing-section-heading,
+.new-landing-try-free-heading,
+.partner-page .partner-hero-copy h1,
+.partner-page .partner-feature-copy h2,
+.partner-page .partner-client-bridge h2,
+.partner-page .partner-credibility h2 {
+  font-size: var(--landing-heading-size);
+  font-weight: var(--landing-heading-weight);
+  line-height: 1.16;
+  letter-spacing: -0.045em;
 }

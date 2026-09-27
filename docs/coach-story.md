@@ -55,3 +55,9 @@ Verification: production build/TypeScript and scoped lint passed. Chromium and W
 The coach headline and supporting line now use the active B2C hero's shared CSS size tokens. Desktop titles cap at 2.8rem (44.8px); mobile titles use the existing B2C 1.5rem–2.2rem scale. Weight, line height and tracking also match. Removed independent coach tablet/short-screen size overrides; gradient descender padding remains. This is CSS presentation only, with no architecture or application behavior change.
 
 Production build passed. Chromium and WebKit compared computed title size, weight, line height, tracking and subtitle size on both routes at 1440, 1280, 850, 768, 390 and 320px, including a 720px-tall desktop viewport. All matched with no horizontal overflow; desktop/mobile hero images were visually reviewed.
+
+## Approved main-title scale — 2026-09-27
+
+Supersedes the earlier hero-only size choice. User selected the credibility title as the reference for all main titles. Both sites now use one heading rule: `clamp(2.125rem, 4vw, 3.25rem)` (34–52px), weight 700, line height 1.16 and tracking -0.045em. It covers hero content titles, section titles and closing-card titles; small labels, card titles and the initial SeeMe wordmark retain their own roles. Removed competing per-section/mobile title sizes. Presentation only; no architecture impact.
+
+Build passed. Chromium and WebKit compared every affected main heading at 1440/768/390/320px on both routes; computed typography matched with no horizontal overflow. Reviewed hero and closing-card layouts on desktop/mobile, including the consumer hero after its entrance sequence.
