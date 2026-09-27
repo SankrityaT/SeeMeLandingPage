@@ -123,7 +123,7 @@ export default function PartnerPage() {
         </Link>
         <div className="new-landing-topbar-actions">
           <SeemeButton href="/" variant="unfilled" size="sm" className="new-landing-topbar-cta">
-            Back to home
+            Client Experience
           </SeemeButton>
         </div>
       </div>
@@ -140,8 +140,8 @@ export default function PartnerPage() {
             </motion.div>
             <motion.div className="partner-hero-proof" variants={heroItemVariants} aria-label="Coach benefits">
               <span><i aria-hidden="true">✦</i> A richer offer</span>
-              <span><i aria-hidden="true">✦</i> Your method, reused</span>
-              <span><i aria-hidden="true">✦</i> Every client in view</span>
+              <span><i aria-hidden="true">✦</i> Your method, scalable</span>
+              <span><i aria-hidden="true">✦</i> Every client, at a glance</span>
             </motion.div>
           </motion.div>
 

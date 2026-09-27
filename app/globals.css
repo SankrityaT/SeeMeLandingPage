@@ -4412,7 +4412,7 @@ body > div {
 .partner-page .partner-hero-stage {
   position: relative;
   width: min(1380px, 100%);
-  height: clamp(430px, 44vw, 620px);
+  height: max(clamp(430px, 44vw, 620px), min(688px, 53.5vw));
   margin: 0 auto;
 }
 .partner-page .partner-hero-product { position: absolute; }
@@ -4539,14 +4539,13 @@ body > div {
   .partner-page .partner-hero-copy h1 { font-size: clamp(48px, 5.2vw, 64px); }
   .partner-page .partner-hero-copy > p { max-width: 780px; font-size: 16px; line-height: 1.45; margin-bottom: 18px; }
   .partner-page .partner-hero-proof { margin-top: 16px; }
-  .partner-page .partner-hero-stage { height: clamp(390px, 45vw, 520px); }
 }
 
 @media (max-width: 850px) {
   .partner-page .partner-hero-content { gap: 34px; }
   .partner-page .partner-hero-copy { max-width: 860px; }
   .partner-page .partner-hero-copy h1 { font-size: clamp(50px, 7vw, 68px); }
-  .partner-page .partner-hero-stage { width: min(100%, 900px); height: clamp(390px, 55vw, 520px); }
+  .partner-page .partner-hero-stage { width: min(100%, 900px); height: max(clamp(390px, 55vw, 520px), min(688px, 53.5vw)); }
   .partner-page .partner-hero-product--main { width: 74%; }
   .partner-page .partner-hero-product--left,
   .partner-page .partner-hero-product--right { width: 31%; }
