@@ -4562,3 +4562,15 @@ body > div {
 
 /* The coach closing panel uses a sized derivative of the shared source artwork. */
 .partner-page .landing-action-panel { background-image: linear-gradient(160deg, rgba(0,0,0,0.6), rgba(0,0,0,0.76)), url('/coach-platform/pilot-background.webp'); }
+
+/* Inline previews reserve the screenshot canvas before any network image arrives. */
+.partner-page .partner-story-preview {
+  aspect-ratio: var(--preview-ratio);
+  background: var(--preview-desktop) center / 100% 100% no-repeat;
+}
+@media (max-width: 600px) {
+  .partner-page .partner-story-preview {
+    aspect-ratio: var(--preview-mobile-ratio);
+    background-image: var(--preview-mobile);
+  }
+}

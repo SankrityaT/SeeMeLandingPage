@@ -39,6 +39,40 @@ export function coachMobileTests(test, expect) {
     }
     expect(failures).toEqual([]);
   });
+  test('screenshots have immediate previews while network images are delayed', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    let releaseImages;
+    const held = new Promise(resolve => { releaseImages = resolve; });
+    const requested = new Set();
+    await page.route('**/coach-platform/*-mobile.webp', async route => {
+      requested.add(route.request().url());
+      await held;
+      await route.continue();
+    });
+    try {
+      await page.goto('/partner', { waitUntil: 'domcontentloaded' });
+      await expect.poll(() => requested.size).toBe(4);
+      const previews = page.locator('.partner-story-preview');
+      await expect(previews).toHaveCount(4);
+      for (const preview of await previews.all()) {
+        const state = await preview.evaluate(element => ({
+          background: getComputedStyle(element).backgroundImage,
+          height: element.getBoundingClientRect().height,
+          loaded: element.querySelector('img').naturalWidth,
+        }));
+        expect(state.background).toContain('data:image/webp;base64,');
+        expect(state.height).toBeGreaterThan(100);
+        expect(state.loaded).toBe(0);
+      }
+      await previews.last().scrollIntoViewIfNeeded();
+      await expect(previews.last()).toBeInViewport();
+    } finally {
+      releaseImages();
+    }
+    for (const img of await page.locator('.partner-story-preview img').all()) {
+      await expect.poll(() => img.evaluate(image => image.naturalWidth)).toBeGreaterThan(0);
+    }
+  });
   test('coach content respects reduced motion', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/partner');

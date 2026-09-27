@@ -3,7 +3,8 @@
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
+import { coachImagePreviews } from '@/lib/coach-image-previews';
 import SeemeButton from '@/components/ui/SeemeButton';
 import LandingActionPanel from '@/components/landing/LandingActionPanel';
 import { COACH_PARTNERS } from '@/lib/coach-partners';
@@ -260,9 +261,17 @@ export default function PartnerPage() {
                   </div>
                 )}
                 <a href={`/coach-platform/${step.image}-desktop.png`} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${step.caption.toLowerCase()} screenshot`}>
-                  <picture>
+                  <picture
+                    className="partner-story-preview"
+                    style={{
+                      '--preview-desktop': `url("${coachImagePreviews[step.image].desktop}")`,
+                      '--preview-mobile': `url("${coachImagePreviews[step.image].mobile}")`,
+                      '--preview-ratio': `${step.width} / ${step.height}`,
+                      '--preview-mobile-ratio': `${step.mobileWidth} / ${step.mobileHeight}`,
+                    } as CSSProperties}
+                  >
                     <source media="(max-width: 600px)" srcSet={`/coach-platform/${step.image}-mobile.webp`} width={step.mobileWidth} height={step.mobileHeight} />
-                    <Image unoptimized src={`/coach-platform/${step.image}-desktop.webp`} alt={step.alt} width={step.width} height={step.height} sizes={step.id === 'assign' ? '(max-width: 600px) 90vw, 480px' : '(max-width: 600px) 90vw, (max-width: 1200px) 90vw, 1080px'} />
+                    <Image unoptimized loading="eager" fetchPriority="low" src={`/coach-platform/${step.image}-desktop.webp`} alt={step.alt} width={step.width} height={step.height} sizes={step.id === 'assign' ? '(max-width: 600px) 90vw, 480px' : '(max-width: 600px) 90vw, (max-width: 1200px) 90vw, 1080px'} />
                   </picture>
                 </a>
               </div>
