@@ -49,3 +49,9 @@ Both the client “Try for Free” section and the coach pilot application now u
 Coach fields retain their current state and submission handler, with readable sentence-case labels, left alignment, 12px corners, explicit keyboard focus and autofill hints. Error and success messages now have alert/status roles. No Supabase request, payload, persistence, authentication or deployment boundary changed; no architecture diagram change is needed.
 
 Verification: production build/TypeScript and scoped lint passed. Chromium and WebKit compared computed closing-card styles across both routes and checked 1440/390/320 layouts, pilot anchor navigation, empty-form validation and keyboard progression. Desktop/mobile images were visually reviewed. External requests were isolated; no valid application was submitted and backend behavior was not tested.
+
+## Shared hero type scale — 2026-09-27
+
+The coach headline and supporting line now use the active B2C hero's shared CSS size tokens. Desktop titles cap at 2.8rem (44.8px); mobile titles use the existing B2C 1.5rem–2.2rem scale. Weight, line height and tracking also match. Removed independent coach tablet/short-screen size overrides; gradient descender padding remains. This is CSS presentation only, with no architecture or application behavior change.
+
+Production build passed. Chromium and WebKit compared computed title size, weight, line height, tracking and subtitle size on both routes at 1440, 1280, 850, 768, 390 and 320px, including a 720px-tall desktop viewport. All matched with no horizontal overflow; desktop/mobile hero images were visually reviewed.
