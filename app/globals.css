@@ -4338,8 +4338,8 @@ body > div {
 .partner-page .partner-hero-product--left,
 .partner-page .partner-hero-product--right { z-index: 3; width: min(29%, 370px); }
 .partner-page .partner-hero-product-inner { position: relative; width: 100%; }
-.partner-page .partner-hero-product--left { top: 24%; left: 0; }
-.partner-page .partner-hero-product--right { top: 18%; right: 0; }
+.partner-page .partner-hero-product--left { top: 22%; left: 0; }
+.partner-page .partner-hero-product--right { top: 22%; right: 0; }
 .partner-page .partner-hero-product--left a,
 .partner-page .partner-hero-product--right a { border-color: rgba(255, 220, 226, 0.28); border-radius: 14px; box-shadow: 0 24px 72px rgba(8, 4, 6, 0.58); }
 .partner-page .partner-product-section {

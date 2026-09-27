@@ -98,7 +98,7 @@ export default function PartnerPage() {
   );
   const heroStageScale = useTransform(heroStageProgress, [0, 0.72, 1], prefersReducedMotion ? [1, 1, 1] : [1, 0.985, 0.96]);
   const heroStageY = useTransform(heroStageProgress, [0, 0.72, 1], prefersReducedMotion ? [0, 0, 0] : [0, -12, -42]);
-  const sideExitProgress = useTransform(heroStageProgress, [0.12, 0.68, 1], [0, 0.78, 1]);
+  const sideExitProgress = useTransform(heroStageProgress, [0.28, 0.68, 1], [0, 0.78, 1]);
   const leftSideExitX = useTransform(sideExitProgress, prefersReducedMotion ? [0, 1] : [0, 1], prefersReducedMotion ? [0, 0] : [0, -220]);
   const rightSideExitX = useTransform(sideExitProgress, prefersReducedMotion ? [0, 1] : [0, 1], prefersReducedMotion ? [0, 0] : [0, 220]);
   const sideExitOpacity = useTransform(sideExitProgress, prefersReducedMotion ? [0, 1] : [0, 0.72, 1], prefersReducedMotion ? [1, 1] : [1, 0.35, 0]);
@@ -202,8 +202,8 @@ export default function PartnerPage() {
                 animate={{ opacity: 1, x: 0, y: 0, rotate: -4, scale: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 1.1, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
-                <a href="/coach-platform/clone-desktop.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size digital clone screenshot">
-                  <Image src="/coach-platform/clone-desktop.png" alt="SeeMe digital clone shaped by the coach’s foundation, materials, style and voice" width={1106} height={651} sizes="(max-width: 767px) 42vw, 28vw" />
+                <a href="/coach-platform/clone-hero.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size digital clone screenshot">
+                  <Image src="/coach-platform/clone-hero.png" alt="SeeMe digital clone shaped by the coach’s foundation, materials, style and voice" width={1190} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
                 </a>
               </motion.figure>
             </motion.div>
@@ -215,8 +215,8 @@ export default function PartnerPage() {
                 animate={{ opacity: 1, x: 0, y: 0, rotate: 4, scale: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <a href="/coach-platform/studio-desktop.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
-                  <Image src="/coach-platform/studio-desktop.png" alt="SeeMe studio for creating guided coaching sessions" width={1106} height={816} sizes="(max-width: 767px) 42vw, 28vw" />
+                <a href="/coach-platform/studio-hero.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
+                  <Image src="/coach-platform/studio-hero.png" alt="SeeMe studio for creating guided coaching sessions" width={1190} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
                 </a>
               </motion.figure>
             </motion.div>

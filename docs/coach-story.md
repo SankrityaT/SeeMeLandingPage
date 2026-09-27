@@ -61,3 +61,9 @@ Production build passed. Chromium and WebKit compared computed title size, weigh
 Supersedes the earlier hero-only size choice. User selected the credibility title as the reference for all main titles. Both sites now use one heading rule: `clamp(2.125rem, 4vw, 3.25rem)` (34–52px), weight 700, line height 1.16 and tracking -0.045em. It covers hero content titles, section titles and closing-card titles; small labels, card titles and the initial SeeMe wordmark retain their own roles. Removed competing per-section/mobile title sizes. Presentation only; no architecture impact.
 
 Build passed. Chromium and WebKit compared every affected main heading at 1440/768/390/320px on both routes; computed typography matched with no horizontal overflow. Reviewed hero and closing-card layouts on desktop/mobile, including the consumer hero after its entrance sequence.
+
+## Hero side-capture alignment — 2026-09-27
+
+Dedicated `clone-hero.png` and `studio-hero.png` captures now include the original “Your digital clone” and “Session studio” screen headings. Both are unretouched 1190×1100 main-canvas crops from the same local demo revision, recorded in provenance. Existing walkthrough crops remain separate. Both hero side panels use the same 22% top position and image ratio, giving equal heights on desktop and mobile. Delayed the start of their existing scroll-exit range to keep the titled panels in view on arrival.
+
+Build and Chromium/WebKit checks passed: images load, both panels have equal top positions and heights at 1440/850/390/320px, and the panels still fade out when navigating past the hero. Visual captures reviewed. Static asset/layout change only; no service architecture impact.

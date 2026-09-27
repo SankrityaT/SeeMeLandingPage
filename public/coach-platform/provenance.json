@@ -77,6 +77,28 @@
       "pixel_height": 1120,
       "device_scale_factor": 2,
       "sha256": "f2086653fe529ed26154c3ba6874cafc99fb494a9026a55143dacbf13840ca5b"
+    },
+    {
+      "file": "clone-hero.png",
+      "view": "Your digital clone overview with original screen heading and main-canvas padding",
+      "captured_at": "2026-09-27T17:28:03.647181+00:00",
+      "revision": "8b17f5aa0b48df79a8b3ef4bad1fa40ab9b23a35",
+      "pixel_width": 2380,
+      "pixel_height": 2200,
+      "device_scale_factor": 2,
+      "capture": "Matching 1190\u00d71100 main-canvas crop from a 1440\u00d71100 viewport; no retouching.",
+      "sha256": "3f78a6054dff2935de5eede6d15c4df6bc29c0d26e47c495ec826748f9ee1aba"
+    },
+    {
+      "file": "studio-hero.png",
+      "view": "Session studio / edit Letting go. Leading better. / Intention with original screen heading and main-canvas padding",
+      "captured_at": "2026-09-27T17:28:03.647581+00:00",
+      "revision": "8b17f5aa0b48df79a8b3ef4bad1fa40ab9b23a35",
+      "pixel_width": 2380,
+      "pixel_height": 2200,
+      "device_scale_factor": 2,
+      "capture": "Matching 1190\u00d71100 main-canvas crop from a 1440\u00d71100 viewport; no retouching.",
+      "sha256": "de5ddacb059c9501f5b0c5899e6f8914432d526306f60664e603d74a6d6d4765"
     }
   ],
   "generated_assets": [
