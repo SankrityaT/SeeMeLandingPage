@@ -1,30 +1,82 @@
 {
-  "captured_at": "2026-09-25T18:51:30.305Z",
-  "source": "http://127.0.0.1:5174",
+  "captured_at": "2026-09-27T15:59:08.339959+00:00",
+  "source": "http://127.0.0.1:5174/prototype",
   "repository": "seeme-coaching-prototype",
-  "revision": "ea5f4704a8c5cd2ca127115c48012fb34ac6e263",
-  "working_tree": "Live local prototype; may include uncommitted updates. No prototype source changes made.",
-  "scope": "Actual browser captures of local prototype using fictional demo data; not released-product evidence. No image retouching.",
+  "revision": "8b17f5aa0b48df79a8b3ef4bad1fa40ab9b23a35",
+  "working_tree": "Clean source tree at capture. No prototype source changes.",
+  "scope": "Actual browser captures with fictional demo data. Desktop viewport 1440\u00d71100; mobile viewport 390\u00d71000 (390\u00d71600 for workspace and clone details). Component crops captured directly in Chromium at 2\u00d7 resolution, with no UI retouching. Not released-product evidence.",
   "images": [
     {
-      "file": "clients-and-sessions.png",
-      "view": "Clients & sessions / all clients / week",
-      "sha256": "ec82520a28afaca706edf7950e2cd0f0d53f87b189274a94412abb310c6ecdd7"
+      "file": "workspace-hero.png",
+      "view": "Full coach workspace, all clients, week view",
+      "pixel_width": 2880,
+      "pixel_height": 2200,
+      "device_scale_factor": 2,
+      "sha256": "bc3d7f1b3cc54e317f9e10fec563e2821ad31cbabb459a9088f3c4585595e3bb"
     },
     {
-      "file": "session-builder.png",
-      "view": "Session studio / Edit Letting go. Leading better. / Intention",
-      "sha256": "b81864a8c24e937af68e04f78175dd59ba2ee2fcfdcad25aa479844bbf800dea"
+      "file": "workspace-desktop.png",
+      "view": "Clients overview including roster and weekly calendar",
+      "pixel_width": 2212,
+      "pixel_height": 1472,
+      "device_scale_factor": 2,
+      "sha256": "4b148a73879352baae10d0d9ea9b223ea9528770e977b168d6caf7416aad99fc"
     },
     {
-      "file": "assignment.png",
-      "view": "Clients & sessions / schedule a between-session exercise / fictional client",
-      "captured_at": "2026-09-26T20:05:13Z",
-      "source": "http://127.0.0.1:5174/prototype",
-      "repository": "seeme-coaching-prototype",
-      "revision": "4fe8e0ec8f9aa7ff5a9039d828bf0d2972de40dc",
-      "working_tree": "Uncommitted local prototype changes were present; screenshot reflects the running local app, not only the recorded commit.",
-      "sha256": "c70adb6d571a727a0fdb5e44eec2ca60b0d84bb7803110c7de7350b95e116d28"
+      "file": "workspace-mobile.png",
+      "view": "Mobile clients overview, roster and visible calendar days",
+      "pixel_width": 716,
+      "pixel_height": 1708,
+      "device_scale_factor": 2,
+      "sha256": "13e1e07f5c66f5d0d8294daecc797a46e5a00e6abbed5a2f86cfde0836fee4d7"
+    },
+    {
+      "file": "clone-desktop.png",
+      "view": "Digital coach composition: foundation, materials, identity, style and voice",
+      "pixel_width": 2212,
+      "pixel_height": 1304,
+      "device_scale_factor": 2,
+      "sha256": "1a9727c903c9cef142645bbd6525f3648499eeabffd9bd08cc4aa145f802b0b7"
+    },
+    {
+      "file": "clone-mobile.png",
+      "view": "Mobile digital coach identity detail",
+      "pixel_width": 716,
+      "pixel_height": 1124,
+      "device_scale_factor": 2,
+      "sha256": "dd70605272bc37bb5c4e2b099d368002bee7a1010c515b29015049eb2cf28c49"
+    },
+    {
+      "file": "studio-desktop.png",
+      "view": "Session creator, Intention step, Letting go. Leading better.",
+      "pixel_width": 2212,
+      "pixel_height": 1634,
+      "device_scale_factor": 2,
+      "sha256": "3ede721abb976fd140b02205679d45aa9dfdb9e265e9de71480c3a8491a7a54b"
+    },
+    {
+      "file": "studio-mobile.png",
+      "view": "Live session card for Letting go. Leading better.",
+      "pixel_width": 640,
+      "pixel_height": 716,
+      "device_scale_factor": 2,
+      "sha256": "46a25e29d28cc1aed7a1346f9ea70acddd4bd702dd5e4b43418fa89c3fd73965"
+    },
+    {
+      "file": "assign-desktop.png",
+      "view": "Schedule dialog, Alex Rivera, between-session exercise",
+      "pixel_width": 1024,
+      "pixel_height": 1080,
+      "device_scale_factor": 2,
+      "sha256": "32137414991c0bb0d55ebcc589b04d355e27d1ad3432a003cf46c2d3d494c2a7"
+    },
+    {
+      "file": "assign-mobile.png",
+      "view": "Mobile schedule dialog, Alex Rivera, between-session exercise",
+      "pixel_width": 716,
+      "pixel_height": 1120,
+      "device_scale_factor": 2,
+      "sha256": "f2086653fe529ed26154c3ba6874cafc99fb494a9026a55143dacbf13840ca5b"
     }
   ],
   "generated_assets": [
