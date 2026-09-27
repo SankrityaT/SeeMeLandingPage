@@ -50,7 +50,7 @@ const sectionRevealVariants = {
 
 const coachStory = [
   {
-    id: 'workspace', label: '01 · Your workspace',
+    id: 'workspace', label: 'Your workspace',
     title: 'Your whole practice. One clear view.',
     description: 'Bring clients, sessions and shared updates together. Know what’s happening and where to focus next.',
     image: 'workspace', width: 1106, height: 736, mobileWidth: 358, mobileHeight: 856,
@@ -58,7 +58,7 @@ const coachStory = [
     alt: 'SeeMe demo client roster and weekly calendar, with coaching meetings, guided exercises, completion indicators and client-shared updates.',
   },
   {
-    id: 'clone', label: '02 · Your digital clone',
+    id: 'clone', label: 'Your digital clone',
     title: 'A digital clone. Unmistakably you.',
     description: 'Shape it with your perspective, materials, coaching style and voice. Your approach becomes the foundation.',
     image: 'clone', width: 1106, height: 651, mobileWidth: 358, mobileHeight: 564,
@@ -66,7 +66,7 @@ const coachStory = [
     alt: 'Digital coach profile for fictional coach Morgan Lee, shaped by her foundation, coaching materials, style settings and selected voice.',
   },
   {
-    id: 'studio', label: '03 · Your sessions',
+    id: 'studio', label: 'Your sessions',
     title: 'Your method, made repeatable.',
     description: 'Turn what works into guided sessions. Set the intention, shape the experience and preview it before assigning.',
     image: 'studio', width: 1106, height: 816, mobileWidth: 320, mobileHeight: 357,
@@ -74,7 +74,7 @@ const coachStory = [
     alt: 'Session studio for Letting go. Leading better., with a coaching intention and an illustrated preview of the guided session clients will see.',
   },
   {
-    id: 'assign', label: '04 · Their next step',
+    id: 'assign', label: 'Their next step',
     title: 'Built once. Personal every time.',
     description: 'Choose the session that fits each client and schedule it between meetings. Follow their completion from your workspace.',
     image: 'assign', width: 512, height: 539, mobileWidth: 358, mobileHeight: 559,
@@ -192,7 +192,6 @@ export default function PartnerPage() {
               <a href="/coach-platform/workspace-hero.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size client overview screenshot">
                 <Image src="/coach-platform/workspace-hero.png" alt="SeeMe coaching prototype showing the coach&apos;s client roster, weekly calendar of sessions and exercises, and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 70vw" priority />
               </a>
-              <figcaption>Clients &amp; sessions · local prototype with fictional data</figcaption>
             </motion.figure>
 
             <motion.div className="partner-hero-product partner-hero-product--left" style={{ x: leftSideExitX, opacity: sideExitOpacity }}>
@@ -242,14 +241,10 @@ export default function PartnerPage() {
         </ul>
       </section>
 
-      <div className="partner-story-intro" id="how-it-works">
-        <p>One workspace. Your approach, at every step.</p>
-        <span>A look inside the coach pilot · Demo screens with fictional data</span>
-      </div>
-
       {coachStory.map((step) => (
         <motion.section
           key={step.id}
+          id={step.id === 'workspace' ? 'how-it-works' : undefined}
           className={`section partner-product-section partner-product-section--${step.id}`}
           initial="hidden"
           whileInView="visible"
@@ -278,7 +273,6 @@ export default function PartnerPage() {
                   </picture>
                 </a>
               </div>
-              <figcaption><span>{step.caption}</span><a href={`/coach-platform/${step.image}-desktop.png`} target="_blank" rel="noopener noreferrer" aria-label={`View ${step.caption.toLowerCase()} full screen`}>View full screen ↗</a></figcaption>
             </figure>
           </div>
         </motion.section>

@@ -15,7 +15,7 @@ Capture states and selectors:
 - Studio: edit “Letting go. Leading better.” / Intention; `.session-workshop` on desktop and `.studio-live-card` on mobile.
 - Assignment: select Alex Rivera / Schedule a session / Between-session exercise / “Letting go. Leading better.”; the complete dialog on both sizes. No assignment is submitted.
 
-Mobile uses native mobile captures through a picture source at 600px. Desktop assignment pairs the real session preview with its assignment dialog. Full-size desktop screenshots remain available through keyboard-accessible image and caption links. No product UI was retouched or generated.
+Mobile uses native mobile captures through a picture source at 600px. Desktop assignment pairs the real session preview with its assignment dialog. Full-size desktop screenshots remain available through keyboard-accessible image links. No product UI was retouched or generated.
 
 ## Architecture review
 
@@ -36,3 +36,8 @@ Added a “New coach pilot · 2026” section after the hero. The year describes
 Screenshot canvases now include internal padding on desktop/mobile. Assignment dialogs retain their existing internal spacing. Removed both hero side-image labels. No source screenshot pixels, application form behavior, network contracts or architecture boundaries changed.
 
 Verification: website build/TypeScript, scoped ESLint, Chromium and WebKit at 1440/768/390/320 widths passed. Reviewed desktop/mobile section images; all three portraits loaded, profile links are keyboard-focusable, screenshot inset is present, hero labels are absent and there is no horizontal overflow. Browser external requests were isolated with empty responses.
+
+
+## Walkthrough cleanup — 2026-09-27
+
+Removed the introductory bridge copy, numeric prefixes from all four section labels, and screenshot footers (including the hero caption). The Explore link now targets the first product section directly; full-size views remain available by activating each image. Static presentation and anchor placement only; no service architecture impact.

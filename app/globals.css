@@ -4398,7 +4398,6 @@ body > div {
 }
 .partner-page .partner-platform-image a:focus-visible { outline: 2px solid #ff8faa; outline-offset: 5px; }
 .partner-page .partner-platform-image img { display: block; width: 100%; height: auto; }
-.partner-page .partner-platform-image figcaption { margin-top: 12px; color: var(--seeme-subtext); font-size: 12px; line-height: 1.6; }
 .partner-page .partner-hero-stage {
   position: relative;
   width: min(1380px, 100%);
@@ -4421,7 +4420,6 @@ body > div {
 .partner-page .partner-hero-product--right { top: 18%; right: 0; }
 .partner-page .partner-hero-product--left a,
 .partner-page .partner-hero-product--right a { border-color: rgba(255, 220, 226, 0.28); border-radius: 14px; box-shadow: 0 24px 72px rgba(8, 4, 6, 0.58); }
-.partner-page .partner-hero-product--main figcaption { text-align: right; }
 .partner-page .partner-product-section {
   padding: clamp(72px, 8vw, 112px) 28px;
   background: #1c1210;
@@ -4456,9 +4454,6 @@ body > div {
 }
 .partner-page .partner-feature-copy > p { max-width: 680px; margin: 0 auto; }
 /* Product story: real demo captures, framed without clipping their contents. */
-.partner-page .partner-story-intro { padding: 28px 24px 0; text-align: center; scroll-margin-top: 90px; background: #1c1210; }
-.partner-page .partner-story-intro p { margin: 0 0 10px; font-size: clamp(18px, 2vw, 23px); letter-spacing: -0.02em; }
-.partner-page .partner-story-intro > span { color: var(--seeme-subtext); font-size: 12px; line-height: 1.6; }
 .partner-page .partner-story-visual { width: 100%; margin: 0; }
 .partner-page .partner-story-frame {
   padding: clamp(16px, 2.6vw, 36px);
@@ -4470,7 +4465,6 @@ body > div {
 .partner-page .partner-story-frame a { display: block; min-width: 0; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: #1a1a1a; }
 .partner-page .partner-story-frame a:focus-visible { outline: 2px solid #ff8faa; outline-offset: 6px; }
 .partner-page .partner-story-frame picture, .partner-page .partner-story-frame img { display: block; width: 100%; height: auto; }
-.partner-page .partner-story-visual figcaption { display: flex; justify-content: space-between; gap: 16px; padding: 16px 6px 0; color: var(--seeme-subtext); font-size: 12px; line-height: 1.5; }
 .partner-page .partner-story-visual--clone .partner-story-frame { background: radial-gradient(ellipse at 50% 50%, rgba(164, 186, 158, 0.16), transparent 75%), #20211d; }
 .partner-page .partner-story-visual--clone a { border: 0; }
 .partner-page .partner-story-visual--assign { max-width: 1040px; }
@@ -4483,7 +4477,6 @@ body > div {
   .partner-page .partner-story-frame { padding: 12px; border-radius: 20px; }
   .partner-page .partner-story-visual--assign .partner-story-frame { display: block; padding: 12px; }
   .partner-page .partner-assignment-source { display: none; }
-  .partner-page .partner-story-visual figcaption { font-size: 11px; }
 }
 .partner-page .partner-client-bridge {
   max-width: none;
@@ -4533,7 +4526,6 @@ body > div {
   .partner-page .partner-hero-product--main a { border-radius: 13px; }
   .partner-page .partner-hero-product--left a,
   .partner-page .partner-hero-product--right a { border-radius: 9px; }
-  .partner-page .partner-hero-product--main figcaption { text-align: left; }
   .partner-page .partner-platform-image a { border-radius: 12px; }
   .partner-page .partner-product-section { padding: 64px 18px; }
   .partner-page .partner-feature-row { gap: 26px; }
@@ -4544,9 +4536,6 @@ body > div {
   .partner-page .partner-client-bridge { padding: 68px 22px; }
 }
 
-.partner-page .partner-story-visual figcaption a { color: inherit; text-decoration: none; }
-.partner-page .partner-story-visual figcaption a:hover { color: #ff9bb0; }
-.partner-page .partner-story-visual figcaption a:focus-visible { outline: 2px solid #ff8faa; outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   .partner-page .partner-hero-copy,
   .partner-page .partner-hero-copy > *,
@@ -4594,3 +4583,5 @@ body > div {
   .partner-page .partner-credibility-intro { font-size: 16px; }
   .partner-page .partner-experts a { padding: 16px; }
 }
+
+.partner-page #how-it-works { scroll-margin-top: 64px; }
