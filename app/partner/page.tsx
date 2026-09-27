@@ -131,9 +131,9 @@ export default function PartnerPage() {
       <section className="partner-simple-hero" aria-labelledby="coach-hero-heading">
         <div className="partner-hero-content">
           <motion.div className="partner-hero-copy" variants={heroContentVariants} initial="hidden" animate="visible">
-            <motion.div className="eyebrow" variants={heroItemVariants}>For coaches</motion.div>
-            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Better support for clients.<br /><em>More earning potential for coaches.</em></motion.h1>
-            <motion.p variants={heroItemVariants}>Turn your method into guidance clients can use between sessions.</motion.p>
+            <motion.div className="eyebrow" variants={heroItemVariants}>Coaching 3.0</motion.div>
+            <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Your coaching, beyond the hour.<br /><em>Your practice, built to scale.</em></motion.h1>
+            <motion.p variants={heroItemVariants}>Extend your method between sessions, giving clients more support and your practice more room to grow.</motion.p>
             <motion.div className="partner-hero-actions" variants={heroItemVariants}>
               <SeemeButton href="#apply" variant="filled" size="lg">Join the coach pilot</SeemeButton>
               <Link href="#how-it-works" className="partner-explore-link">See how it works <span aria-hidden="true">↓</span></Link>
