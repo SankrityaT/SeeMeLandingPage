@@ -30,3 +30,16 @@ The legacy adapter is deprecated upstream but retained for compatibility with th
 ## Credential follow-up
 
 An old R2 setup document contained credential values. Current documentation now uses placeholders. Historical Git copies are unchanged; the exposed credential should be rotated by its owner. No credentials were rotated during this website release.
+
+## Release receipt — 2026-09-27
+
+- Production: `c348dd95-957d-4ed2-a29e-43b32edcbeaf`, https://c348dd95.seemelandingpage.pages.dev
+- Live: https://www.seemeai.app and https://www.seemeai.app/partner; apex also verified.
+- Deployment source: `fe911d054b87a4c508da74b0deb5f4c85c9c9b6a`. Application code matches `5b6fb39`; later commits contain credential-document cleanup and release documentation. No Git push.
+- Successful preview: https://3f6b3547.seemelandingpage.pages.dev; identical artifact published to production.
+- Passed: suite build, Pages adapter build, public credential scan, all 12 coach image hashes on preview and production.
+- Live Chromium/WebKit, 1440px and 390px: both pages HTTP 200, images loaded, no horizontal overflow or application errors; hero, pilot CTA and empty-form validation passed. Privacy HTTP 200; unauthenticated analytics page/API HTTP 404 as designed.
+- Preview WebKit logged Cloudflare telemetry access-control warnings; final production checks recorded none. Initial checks during alias propagation saw old content; subsequent checks passed.
+- No real signup was submitted; database writes and migrations were not tested. No DNS changes.
+- Preview runtime aligned with production's `nodejs_compat`; provider variable values preserved.
+- Rollback: `360c4af5-b4f1-4c5c-9a8e-b492a162ceb3`.
