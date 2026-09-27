@@ -1,0 +1,149 @@
+{
+  "description": "Resized WebP derivatives of existing source captures; no content changes. Originals and capture provenance retained.",
+  "images": [
+    {
+      "source": "coach-platform/assign-desktop.png",
+      "output": "coach-platform/assign-desktop.webp",
+      "width": 1024,
+      "height": 1080,
+      "bytes": 32774,
+      "sha256": "dffdac38792bb15450139d3b6efafc502839115569fb410a68839f8b66ed5a65"
+    },
+    {
+      "source": "coach-platform/assign-mobile.png",
+      "output": "coach-platform/assign-mobile.webp",
+      "width": 716,
+      "height": 1120,
+      "bytes": 32730,
+      "sha256": "e9159e7f914c09f52291eb43e2c6eb4a2ad9d0da18104226d948cebda6c17d12"
+    },
+    {
+      "source": "coach-platform/clone-desktop.png",
+      "output": "coach-platform/clone-desktop.webp",
+      "width": 1800,
+      "height": 1061,
+      "bytes": 65048,
+      "sha256": "c394f67bb467292691c6ee4830f7c85f93aa60dd8b685ad20916ebba80444e83"
+    },
+    {
+      "source": "coach-platform/clone-hero.png",
+      "output": "coach-platform/clone-hero.webp",
+      "width": 800,
+      "height": 739,
+      "bytes": 30564,
+      "sha256": "dbf0603d4812abf1bca7a1d6e9639a8b95c1c3651ab7b3bb887ab0391c6d20e3"
+    },
+    {
+      "source": "coach-platform/clone-mobile.png",
+      "output": "coach-platform/clone-mobile.webp",
+      "width": 716,
+      "height": 1124,
+      "bytes": 25430,
+      "sha256": "94b13f0d12763abfc68ddd2b3d5222721565b4c3e0bcdd06c10b9136dec76baa"
+    },
+    {
+      "source": "coach-platform/studio-desktop.png",
+      "output": "coach-platform/studio-desktop.webp",
+      "width": 1800,
+      "height": 1330,
+      "bytes": 72272,
+      "sha256": "363859f59bde3de29cd4d97cf593eb987cd6f939628c3d99efe577710353f230"
+    },
+    {
+      "source": "coach-platform/studio-hero.png",
+      "output": "coach-platform/studio-hero.webp",
+      "width": 800,
+      "height": 739,
+      "bytes": 25200,
+      "sha256": "d909fea950534caf9ddc4e3520bf0e7b096390e4b132acddfc3624976b86c130"
+    },
+    {
+      "source": "coach-platform/studio-mobile.png",
+      "output": "coach-platform/studio-mobile.webp",
+      "width": 640,
+      "height": 716,
+      "bytes": 18634,
+      "sha256": "dac0562d0777077740c7d118466592e8e2052fbcda9ea8d4d225b15d42478d25"
+    },
+    {
+      "source": "coach-platform/workspace-desktop.png",
+      "output": "coach-platform/workspace-desktop.webp",
+      "width": 1800,
+      "height": 1198,
+      "bytes": 64736,
+      "sha256": "d4c52d1f7ecf06b298ba35efe896807c9b9d388e4c2c68ad15085e70c9ddad8a"
+    },
+    {
+      "source": "coach-platform/workspace-hero.png",
+      "output": "coach-platform/workspace-hero.webp",
+      "width": 1800,
+      "height": 1375,
+      "bytes": 87276,
+      "sha256": "1e0a88ec2f3649592114e1a75eb75e226337f00ea6677b7166eb27e966988c36"
+    },
+    {
+      "source": "coach-platform/workspace-mobile.png",
+      "output": "coach-platform/workspace-mobile.webp",
+      "width": 716,
+      "height": 1708,
+      "bytes": 46082,
+      "sha256": "fa038b333fb7c31c9a22c402d6a1a47f70da509b4374321ab0887058773c85bf"
+    },
+    {
+      "source": "coach-platform/workspace-hero.png",
+      "output": "coach-platform/workspace-hero-small.webp",
+      "width": 900,
+      "height": 688,
+      "bytes": 34218,
+      "sha256": "8b8009d54151d248ffe203e5ddfb33350b773fd978da545c629f59de6ac20a32"
+    },
+    {
+      "source": "coach-platform/coach-hero-background.jpg",
+      "output": "coach-platform/coach-hero-background.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 27030,
+      "sha256": "6b33ac68a37af45093dd69b473674400996660079f89c705cca165a309f76000"
+    },
+    {
+      "source": "Marius.png",
+      "output": "coach-platform/expert-0.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 3040,
+      "sha256": "df37dcd33cc0305676ede6010488c8ce1b45df9120d781f3f31ce6ac9e0d75da"
+    },
+    {
+      "source": "ken1.png",
+      "output": "coach-platform/expert-1.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 4272,
+      "sha256": "1588273c540e2ce9eae9202ce180731770ad827f980c242168002ae6e42d0d2c"
+    },
+    {
+      "source": "andrea.png",
+      "output": "coach-platform/expert-2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2696,
+      "sha256": "d0645e9699269c898bba5b590a52dc5c1a69cc5e332c15a12dad606c3d8df04a"
+    },
+    {
+      "source": "SeeMeB2CIcon.png",
+      "output": "coach-platform/brand-icon.webp",
+      "width": 64,
+      "height": 64,
+      "bytes": 1540,
+      "sha256": "f9285643a8bc7f4773857c7fc72dcf3ecb9d76b1d9755d88c7a870653986f858"
+    },
+    {
+      "source": "2ndLayerBackground_optimized.png",
+      "output": "coach-platform/pilot-background.webp",
+      "width": 900,
+      "height": 393,
+      "bytes": 37944,
+      "sha256": "992e0cf97a29fc0dc967104c03bcac3b4b0d2c482bcccb5c5c8dd2c26f5d6e8f"
+    }
+  ]
+}

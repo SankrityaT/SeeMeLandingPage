@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useRef, useState } from 'react';
 import SeemeButton from '@/components/ui/SeemeButton';
 import LandingActionPanel from '@/components/landing/LandingActionPanel';
-import { getSupabase } from '@/lib/supabase';
 import { COACH_PARTNERS } from '@/lib/coach-partners';
 
 const heroContentVariants = {
@@ -36,25 +35,12 @@ const heroItemVariants = {
   },
 };
 
-const sectionRevealVariants = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(10px)' },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  },
-};
-
 const coachStory = [
   {
     id: 'workspace', label: 'Your workspace',
     title: 'Your whole practice. One clear view.',
     description: 'Bring clients, sessions and shared updates together. Know what’s happening and where to focus next.',
-    image: 'workspace', width: 1106, height: 736, mobileWidth: 358, mobileHeight: 856,
+    image: 'workspace', width: 1106, height: 736, mobileWidth: 358, mobileHeight: 854,
     caption: 'Clients & sessions',
     alt: 'SeeMe demo client roster and weekly calendar, with coaching meetings, guided exercises, completion indicators and client-shared updates.',
   },
@@ -62,7 +48,7 @@ const coachStory = [
     id: 'clone', label: 'Your digital clone',
     title: 'A digital clone. Unmistakably you.',
     description: 'Shape it with your perspective, materials, coaching style and voice. Your approach becomes the foundation.',
-    image: 'clone', width: 1106, height: 651, mobileWidth: 358, mobileHeight: 564,
+    image: 'clone', width: 1106, height: 651, mobileWidth: 358, mobileHeight: 562,
     caption: 'Your digital clone',
     alt: 'Digital coach profile for fictional coach Morgan Lee, shaped by her foundation, coaching materials, style settings and selected voice.',
   },
@@ -120,6 +106,7 @@ export default function PartnerPage() {
     setSubmitting(true);
 
     try {
+      const { getSupabase } = await import('@/lib/supabase');
       const supabase = getSupabase();
       if (!supabase) {
         setSubmitError('Unable to connect. Please try again later.');
@@ -156,7 +143,7 @@ export default function PartnerPage() {
     <div className="partner-page">
       <div className="new-landing-topbar is-visible">
         <Link href="/" className="new-landing-topbar-logo" aria-label="SeeMe home">
-          <Image src="/SeeMeB2CIcon.png" alt="SeeMe" width={22} height={22} style={{ display: 'block' }} />
+          <Image src="/coach-platform/brand-icon.webp" unoptimized alt="SeeMe" width={22} height={22} style={{ display: 'block' }} />
         </Link>
         <div className="new-landing-topbar-actions">
           <SeemeButton href="/" variant="unfilled" size="sm" className="new-landing-topbar-cta">
@@ -167,7 +154,7 @@ export default function PartnerPage() {
 
       <section className="partner-simple-hero" aria-labelledby="coach-hero-heading">
         <div className="partner-hero-content">
-          <motion.div className="partner-hero-copy" variants={heroContentVariants} initial="hidden" animate="visible">
+          <motion.div className="partner-hero-copy" variants={heroContentVariants} initial={false} animate="visible">
             <motion.div className="eyebrow" variants={heroItemVariants}>Coaching 3.0</motion.div>
             <motion.h1 id="coach-hero-heading" variants={heroItemVariants}>Your coaching, beyond the hour.<br /><em>Your practice, built to scale.</em></motion.h1>
             <motion.p variants={heroItemVariants}>A digital extension of your coaching, shaped by your methods and guided by you.</motion.p>
@@ -191,7 +178,10 @@ export default function PartnerPage() {
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
               <a href="/coach-platform/workspace-hero.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size client overview screenshot">
-                <Image src="/coach-platform/workspace-hero.png" alt="SeeMe coaching prototype showing the coach&apos;s client roster, weekly calendar of sessions and exercises, and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 70vw" priority />
+                <picture>
+                  <source media="(max-width: 767px)" srcSet="/coach-platform/workspace-hero-small.webp" />
+                  <Image unoptimized src="/coach-platform/workspace-hero.webp" alt="SeeMe coaching prototype showing the coach&apos;s client roster, weekly calendar of sessions and exercises, and client records" width={1440} height={1100} sizes="(max-width: 767px) 100vw, 70vw" loading="eager" fetchPriority="high" />
+                </picture>
               </a>
             </motion.figure>
 
@@ -203,7 +193,10 @@ export default function PartnerPage() {
                 transition={{ duration: 1.1, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
                 <a href="/coach-platform/clone-hero.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size digital clone screenshot">
-                  <Image src="/coach-platform/clone-hero.png" alt="SeeMe digital clone shaped by the coach’s foundation, materials, style and voice" width={1190} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
+                  <picture>
+                    <source media="(max-width: 767px)" srcSet="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+                    <Image unoptimized src="/coach-platform/clone-hero.webp" alt="SeeMe digital clone shaped by the coach’s foundation, materials, style and voice" width={1190} height={1100} sizes="28vw" />
+                  </picture>
                 </a>
               </motion.figure>
             </motion.div>
@@ -216,7 +209,10 @@ export default function PartnerPage() {
                 transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <a href="/coach-platform/studio-hero.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
-                  <Image src="/coach-platform/studio-hero.png" alt="SeeMe studio for creating guided coaching sessions" width={1190} height={1100} sizes="(max-width: 767px) 42vw, 28vw" />
+                  <picture>
+                    <source media="(max-width: 767px)" srcSet="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+                    <Image unoptimized src="/coach-platform/studio-hero.webp" alt="SeeMe studio for creating guided coaching sessions" width={1190} height={1100} sizes="28vw" />
+                  </picture>
                 </a>
               </motion.figure>
             </motion.div>
@@ -230,10 +226,10 @@ export default function PartnerPage() {
         <p className="partner-credibility-intro">People already turn to SeeMe for reflection and personal growth. Now we’re bringing human coaches into that experience.</p>
         <p className="partner-credibility-label">Built with coaches and experts from our client experience</p>
         <ul className="partner-experts">
-          {COACH_PARTNERS.map((coach) => (
+          {COACH_PARTNERS.map((coach, index) => (
             <li key={coach.name}>
               <a href={coach.link} target="_blank" rel="noopener noreferrer" aria-label={`Learn about ${coach.name} (opens in a new tab)`}>
-                <Image src={coach.img} alt="" width={64} height={64} sizes="64px" />
+                <Image src={`/coach-platform/expert-${index}.webp`} unoptimized alt="" width={64} height={64} sizes="64px" />
                 <span><strong>{coach.name}</strong><span>{coach.role}</span></span>
                 <span className="partner-expert-arrow" aria-hidden="true">↗</span>
               </a>
@@ -243,14 +239,10 @@ export default function PartnerPage() {
       </section>
 
       {coachStory.map((step) => (
-        <motion.section
+        <section
           key={step.id}
           id={step.id === 'workspace' ? 'how-it-works' : undefined}
           className={`section partner-product-section partner-product-section--${step.id}`}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={sectionRevealVariants}
           aria-labelledby={`${step.id}-heading`}
         >
           <div className="inner partner-feature-row">
@@ -263,28 +255,28 @@ export default function PartnerPage() {
               <div className="partner-story-frame">
                 {step.id === 'assign' && (
                   <div className="partner-assignment-source" aria-hidden="true">
-                    <Image src="/coach-platform/studio-mobile.png" alt="" width={320} height={357} sizes="300px" />
+                    <Image unoptimized src="/coach-platform/studio-mobile.webp" alt="" width={320} height={357} sizes="300px" />
                     <span>From your session library <span>→</span></span>
                   </div>
                 )}
                 <a href={`/coach-platform/${step.image}-desktop.png`} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${step.caption.toLowerCase()} screenshot`}>
                   <picture>
-                    <source media="(max-width: 600px)" srcSet={`/coach-platform/${step.image}-mobile.png`} width={step.mobileWidth} height={step.mobileHeight} />
-                    <Image src={`/coach-platform/${step.image}-desktop.png`} alt={step.alt} width={step.width} height={step.height} sizes={step.id === 'assign' ? '(max-width: 600px) 90vw, 480px' : '(max-width: 600px) 90vw, (max-width: 1200px) 90vw, 1080px'} />
+                    <source media="(max-width: 600px)" srcSet={`/coach-platform/${step.image}-mobile.webp`} width={step.mobileWidth} height={step.mobileHeight} />
+                    <Image unoptimized src={`/coach-platform/${step.image}-desktop.webp`} alt={step.alt} width={step.width} height={step.height} sizes={step.id === 'assign' ? '(max-width: 600px) 90vw, 480px' : '(max-width: 600px) 90vw, (max-width: 1200px) 90vw, 1080px'} />
                   </picture>
                 </a>
               </div>
             </figure>
           </div>
-        </motion.section>
+        </section>
       ))}
 
-      <motion.section className="partner-client-bridge" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionRevealVariants} aria-labelledby="client-space-heading">
+      <section className="partner-client-bridge" aria-labelledby="client-space-heading">
         <div className="eyebrow">One coaching relationship</div>
         <h2 id="client-space-heading">A clear workspace for you.<br /><em>A personal space for them.</em></h2>
         <p>SeeMe is designed to bring your approach into a client experience built around their own goals. The coach-client connection and client-controlled sharing are in development.</p>
         <Link href="/" className="partner-client-link">See the client experience <span aria-hidden="true">→</span></Link>
-      </motion.section>
+      </section>
 
       <LandingActionPanel
         id="apply"

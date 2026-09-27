@@ -4232,7 +4232,7 @@ body > div {
   background:
     linear-gradient(180deg, rgba(25, 15, 14, 0.12) 0%, rgba(28, 18, 16, 0.25) 42%, #1c1210 100%),
     linear-gradient(90deg, rgba(28, 18, 16, 0.34) 0%, rgba(28, 18, 16, 0.03) 48%, rgba(28, 18, 16, 0.34) 100%),
-    url('/coach-platform/coach-hero-background.jpg') center top / 100% auto no-repeat,
+    url('/coach-platform/coach-hero-background.webp') center top / 100% auto no-repeat,
     #1c1210;
 }
 .partner-page .partner-simple-hero::before,
@@ -4430,12 +4430,33 @@ body > div {
   .partner-page .partner-feature-copy { max-width: 760px; }
 }
 @media (max-width: 767px) {
-  .partner-page .partner-simple-hero { min-height: 0; padding: 132px 18px 38px; }
+  .partner-page .partner-simple-hero {
+    min-height: 0;
+    padding: 100px 20px 40px;
+    background:
+      linear-gradient(180deg, rgba(28,18,16,0.25), rgba(28,18,16,0.3) 50%, #1c1210 100%),
+      url('/coach-platform/coach-hero-background.webp') center / cover no-repeat,
+      #1c1210;
+  }
   .partner-page .partner-simple-hero::before { background-position: center center; opacity: 0.52; }
   .partner-page .partner-simple-hero::after { background: linear-gradient(180deg, rgba(25, 15, 14, 0.18), rgba(28, 18, 16, 0.3) 45%, #1c1210 100%); }
   .partner-page .partner-hero-content { gap: 28px; }
   .partner-page .partner-hero-copy > p { max-width: 520px; }
-  .partner-page .partner-hero-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; width: 100%; height: auto; margin-top: 8px; }
+  .partner-page .partner-hero-stage { display: block; width: min(100%, 540px); height: auto; margin-top: 0; }
+  .partner-page .partner-hero-product--left,
+  .partner-page .partner-hero-product--right { display: none; }
+  /* Mobile content is visible immediately, with no scroll-driven compositing. */
+  .partner-page .partner-hero-copy,
+  .partner-page .partner-hero-copy > *,
+  .partner-page .partner-hero-stage,
+  .partner-page .partner-hero-product--main { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .partner-page .partner-hero-product--main a { box-shadow: 0 16px 36px rgba(8,4,6,0.3); }
+  .partner-page .partner-hero-copy h1 { text-wrap: balance; }
+  .partner-page .partner-hero-copy > p { font-size: 16px; line-height: 1.6; }
+  .partner-page .partner-explore-link { min-height: 44px; }
+  .partner-page .partner-story-frame { box-shadow: none; }
+  .partner-page .partner-pilot-form input,
+  .partner-page .partner-pilot-form select { font-size: 16px; }
   .partner-page .partner-hero-product { position: relative; top: auto; right: auto; left: auto; width: 100%; translate: none; }
   .partner-page .partner-hero-product--main { grid-column: 1 / -1; }
   .partner-page .partner-hero-product--main a { border-radius: 13px; }
@@ -4538,3 +4559,6 @@ body > div {
   line-height: 1.16;
   letter-spacing: -0.045em;
 }
+
+/* The coach closing panel uses a sized derivative of the shared source artwork. */
+.partner-page .landing-action-panel { background-image: linear-gradient(160deg, rgba(0,0,0,0.6), rgba(0,0,0,0.76)), url('/coach-platform/pilot-background.webp'); }
