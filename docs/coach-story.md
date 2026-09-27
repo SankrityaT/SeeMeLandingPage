@@ -28,3 +28,11 @@ This changes marketing copy, static images, responsive presentation and screensh
 - Explore and pilot anchors reached their destinations; keyboard activation opened a full-size screenshot; hero side panels faded after scrolling; reduced-motion content stayed unblurred. No page or console errors in the final run.
 - External browser requests were fulfilled with empty responses to isolate public navigation from analytics. No application was submitted and no backend behavior was claimed as tested.
 - Desktop and mobile section screenshots were visually reviewed. Existing Next middleware and browser mapping build warnings remain.
+
+## Credibility and framing update — 2026-09-27
+
+Added a “New coach pilot · 2026” section after the hero. The year describes the pilot, not the company founding date. Coach names, roles, portraits and profile links are reused unchanged from the client landing page through `lib/coach-partners.ts`; the section identifies their connection to that client experience without claiming pilot participation. Numerical community size and coach-waitlist wording await clarification, so current copy uses a general existing-community statement.
+
+Screenshot canvases now include internal padding on desktop/mobile. Assignment dialogs retain their existing internal spacing. Removed both hero side-image labels. No source screenshot pixels, application form behavior, network contracts or architecture boundaries changed.
+
+Verification: website build/TypeScript, scoped ESLint, Chromium and WebKit at 1440/768/390/320 widths passed. Reviewed desktop/mobile section images; all three portraits loaded, profile links are keyboard-focusable, screenshot inset is present, hero labels are absent and there is no horizontal overflow. Browser external requests were isolated with empty responses.

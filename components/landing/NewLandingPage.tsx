@@ -6,6 +6,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import SeemeButton from '@/components/ui/SeemeButton';
+import { COACH_PARTNERS as COACHES } from '@/lib/coach-partners';
 
 // ========== TYPES ==========
 type Phase = 'seeme' | 'content';
@@ -95,12 +96,6 @@ const INTEGRATION_ICONS = [
   { src: '/ScreenTime.png', alt: 'Screen Time', width: 52, height: 52 },
 ];
 
-// ========== COACHES DATA ==========
-const COACHES = [
-  { name: 'Marius Ketels', role: 'Life Coach', img: '/Marius.png', link: 'https://www.ketelsconsulting.com' },
-  { name: 'Ken Russel', role: 'Life Coach', img: '/ken1.png', link: 'https://www.linkedin.com/in/cavedraw' },
-  { name: 'Dr. Andrea Cherman', role: 'Mentor', img: '/andrea.png', link: 'https://www.linkedin.com/in/chermanandrea' },
-];
 
 // ========== TESTIMONIALS DATA ==========
 const TESTIMONIALS = [

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRef, useState } from 'react';
 import SeemeButton from '@/components/ui/SeemeButton';
 import { getSupabase } from '@/lib/supabase';
+import { COACH_PARTNERS } from '@/lib/coach-partners';
 
 const heroContentVariants = {
   hidden: { opacity: 0, y: 28, filter: 'blur(10px)' },
@@ -204,7 +205,6 @@ export default function PartnerPage() {
                 <a href="/coach-platform/clone-desktop.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size digital clone screenshot">
                   <Image src="/coach-platform/clone-desktop.png" alt="SeeMe digital clone shaped by the coach’s foundation, materials, style and voice" width={1106} height={651} sizes="(max-width: 767px) 42vw, 28vw" />
                 </a>
-                <figcaption>Your digital clone</figcaption>
               </motion.figure>
             </motion.div>
 
@@ -218,11 +218,28 @@ export default function PartnerPage() {
                 <a href="/coach-platform/studio-desktop.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size session studio screenshot">
                   <Image src="/coach-platform/studio-desktop.png" alt="SeeMe studio for creating guided coaching sessions" width={1106} height={816} sizes="(max-width: 767px) 42vw, 28vw" />
                 </a>
-                <figcaption>Your guided sessions</figcaption>
               </motion.figure>
             </motion.div>
           </motion.div>
         </div>
+      </section>
+
+      <section className="partner-credibility" aria-labelledby="partner-credibility-heading">
+        <div className="eyebrow">New coach pilot · 2026</div>
+        <h2 id="partner-credibility-heading">A new chapter.<br /><em>A community already here.</em></h2>
+        <p className="partner-credibility-intro">People already turn to SeeMe for reflection and personal growth. Now we’re bringing human coaches into that experience.</p>
+        <p className="partner-credibility-label">Built with coaches and experts from our client experience</p>
+        <ul className="partner-experts">
+          {COACH_PARTNERS.map((coach) => (
+            <li key={coach.name}>
+              <a href={coach.link} target="_blank" rel="noopener noreferrer" aria-label={`Learn about ${coach.name} (opens in a new tab)`}>
+                <Image src={coach.img} alt="" width={64} height={64} sizes="64px" />
+                <span><strong>{coach.name}</strong><span>{coach.role}</span></span>
+                <span className="partner-expert-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <div className="partner-story-intro" id="how-it-works">

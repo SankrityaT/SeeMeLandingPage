@@ -4421,8 +4421,6 @@ body > div {
 .partner-page .partner-hero-product--right { top: 18%; right: 0; }
 .partner-page .partner-hero-product--left a,
 .partner-page .partner-hero-product--right a { border-color: rgba(255, 220, 226, 0.28); border-radius: 14px; box-shadow: 0 24px 72px rgba(8, 4, 6, 0.58); }
-.partner-page .partner-hero-product--left figcaption,
-.partner-page .partner-hero-product--right figcaption { position: absolute; top: 9px; left: 10px; margin: 0; padding: 6px 9px; border: 1px solid rgba(255,255,255,0.13); border-radius: 999px; background: rgba(22,15,15,0.78); color: #fff3f5; font-size: 10px; letter-spacing: 0.01em; backdrop-filter: blur(12px); }
 .partner-page .partner-hero-product--main figcaption { text-align: right; }
 .partner-page .partner-product-section {
   padding: clamp(72px, 8vw, 112px) 28px;
@@ -4535,8 +4533,6 @@ body > div {
   .partner-page .partner-hero-product--main a { border-radius: 13px; }
   .partner-page .partner-hero-product--left a,
   .partner-page .partner-hero-product--right a { border-radius: 9px; }
-  .partner-page .partner-hero-product--left figcaption,
-  .partner-page .partner-hero-product--right figcaption { top: 5px; left: 5px; padding: 4px 6px; font-size: 8px; }
   .partner-page .partner-hero-product--main figcaption { text-align: left; }
   .partner-page .partner-platform-image a { border-radius: 12px; }
   .partner-page .partner-product-section { padding: 64px 18px; }
@@ -4562,4 +4558,39 @@ body > div {
     filter: none !important;
     transform: none !important;
   }
+}
+
+/* Keep the captured UI inset within its own dark canvas. */
+.partner-page .partner-story-frame a { padding: clamp(16px, 2.2vw, 30px); }
+.partner-page .partner-story-visual--assign .partner-story-frame a { padding: 0; }
+.partner-page .partner-hero-product--left a,
+.partner-page .partner-hero-product--right a { padding: 12px; }
+.partner-page .partner-credibility {
+  padding: 76px 28px 90px;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 45%, rgba(254, 63, 106, 0.055), transparent 68%), #1c1210;
+}
+.partner-page .partner-credibility .eyebrow { color: #ffd5dc; border-color: rgba(255,180,190,0.22); background: rgba(255,255,255,0.035); }
+.partner-page .partner-credibility h2 { margin: 22px 0 20px; font-size: clamp(34px, 4vw, 52px); line-height: 1.16; letter-spacing: -0.045em; }
+.partner-page .partner-credibility h2 em { font-style: normal; color: #ff9bb0; }
+.partner-page .partner-credibility-intro { max-width: 630px; margin: 0 auto; color: var(--seeme-subtext); font-size: 17px; line-height: 1.7; text-wrap: pretty; }
+.partner-page .partner-credibility-label { margin: 38px 0 18px; color: var(--seeme-subtext); font-size: 13px; }
+.partner-page .partner-experts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 960px; margin: 0 auto; padding: 0; list-style: none; }
+.partner-page .partner-experts a { display: flex; align-items: center; gap: 14px; height: 100%; padding: 20px; border: 1px solid rgba(255,218,210,0.12); border-radius: 18px; background: rgba(255,255,255,0.025); color: #fff5f0; text-decoration: none; text-align: left; transition: background 0.2s ease, border-color 0.2s ease; }
+.partner-page .partner-experts a:hover { background: rgba(255,255,255,0.055); border-color: rgba(255,180,190,0.35); }
+.partner-page .partner-experts a:focus-visible { outline: 2px solid #ff8faa; outline-offset: 4px; }
+.partner-page .partner-experts img { width: 58px; height: 58px; flex-shrink: 0; border-radius: 50%; object-fit: cover; }
+.partner-page .partner-experts strong { display: block; font-size: 15px; font-weight: 600; line-height: 1.4; }
+.partner-page .partner-experts a > span > span { display: block; margin-top: 4px; color: var(--seeme-subtext); font-size: 13px; }
+.partner-page .partner-expert-arrow { margin-left: auto; color: var(--seeme-subtext); }
+@media (max-width: 800px) {
+  .partner-page .partner-experts { max-width: 420px; grid-template-columns: 1fr; gap: 10px; }
+}
+@media (max-width: 600px) {
+  .partner-page .partner-story-frame a { padding: 14px; }
+  .partner-page .partner-hero-product--left a,
+  .partner-page .partner-hero-product--right a { padding: 6px; }
+  .partner-page .partner-credibility { padding: 56px 20px 64px; }
+  .partner-page .partner-credibility-intro { font-size: 16px; }
+  .partner-page .partner-experts a { padding: 16px; }
 }
