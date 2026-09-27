@@ -4,9 +4,9 @@ Add these to your `.env.local` file:
 
 ```bash
 # R2 Configuration (from Cloudflare Dashboard)
-R2_ACCOUNT_ID=9f8465e30ee4bb2cae1954b8737c974d
-R2_ACCESS_KEY_ID=4386fbee77f77fe0927e5c625148a202
-R2_SECRET_ACCESS_KEY=6f6d7ba5e54ef7357dcb3fac837fefc0d1775ad56372aff6f78535cfb4666e61
+R2_ACCOUNT_ID=your-r2-account-id
+R2_ACCESS_KEY_ID=your-r2-access-key-id
+R2_SECRET_ACCESS_KEY=your-r2-secret-access-key
 R2_BUCKET_NAME=your-bucket-name
 
 # Public URL for R2 bucket (set this after configuring public access)
@@ -24,3 +24,5 @@ NEXT_PUBLIC_R2_PUBLIC_URL=https://your-r2-public-url.r2.dev
    - **Connect custom domain** (recommended, e.g., `videos.seeme.xyz`)
 
 Once you have the public URL, update `NEXT_PUBLIC_R2_PUBLIC_URL` in your `.env.local`
+
+Never commit credential values. Configure production values in Cloudflare Pages and keep local values in ignored environment files.
